@@ -40,6 +40,9 @@
 | **scene-distillation-zine** | 影像蒸馏、蒸馏海报、照片变插画、抽象海报、不要照片只要意境（需提供照片，照片不出现） | 生成图像 |
 | **still-image-motion-director** | 图生视频、图片动起来、让图动、i2v、即梦、motion prompt、动效方向（需提供静图） | 动效 Prompt |
 | **doneai** | 活动海报、Banner、数据战报、内部公告、社媒配图、运营物料、快速出图、信息图、知识卡片 | 生成图像（API） |
+| **gpt-image2-skill** | GPT Image 2、gpt-image2、AI生图、文生图、图片编辑、提示词模板 | PNG（CLI） |
+| **image-to-editable-ppt** | 截图转PPT、图片转可编辑PPT、PDF转PPT、图片版PPT转可编辑 | `.pptx` |
+| **xxg-portrait-rebuild-light** | 人像重建、人像打光、portrait rebuild、人像照片编辑、image-edit重建 | 编辑后图像 |
 
 ### 怎么选
 
@@ -55,6 +58,9 @@
 | 用照片出一张抽象插画海报（照片不出现） | **scene-distillation-zine** |
 | 给一张静图设计动效方向（图生视频） | **still-image-motion-director** |
 | 快速出办公海报/Banner/公告/信息图 | **doneai** |
+| 用 GPT Image 2 生成/编辑图片 | **gpt-image2-skill** |
+| 把截图/图片/PDF 转成可编辑 PPT | **image-to-editable-ppt** |
+| 对人像照片做专业级打光重建 | **xxg-portrait-rebuild-light** |
 
 ---
 
@@ -95,7 +101,10 @@ draw-agent/
 │   ├── scenes-gathered-zine/SKILL.md
 │   ├── scene-distillation-zine/SKILL.md
 │   ├── still-image-motion-director/SKILL.md
-│   └── doneai/SKILL.md
+│   ├── doneai/SKILL.md
+│   ├── gpt-image2-skill/SKILL.md
+│   ├── image-to-editable-ppt/SKILL.md
+│   └── xxg-portrait-rebuild-light/SKILL.md
 ├── references/                     # fireworks-diagram 风格参考
 ├── schemas/                        # JSON Schema 图表校验
 ├── scripts/                        # 辅助脚本（几何检查等）
@@ -113,7 +122,8 @@ draw-agent/
 ```bash
 for skill in draw-agent-router fireworks-diagram auto-diagram drawio-skill html-doc \
              lieflat-charts zine-poster scenes-gathered-zine scene-distillation-zine \
-             still-image-motion-director doneai; do
+             still-image-motion-director doneai gpt-image2-skill image-to-editable-ppt \
+             xxg-portrait-rebuild-light; do
   ln -sf /path/to/draw-agent/.cursor/skills/$skill ~/.cursor/skills/$skill
 done
 ```

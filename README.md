@@ -40,6 +40,9 @@ A collection of drawing Agents, shared across **Cursor**, **Codex**, and **Claud
 | **scene-distillation-zine** | 影像蒸馏、蒸馏海报、照片变插画、抽象海报、不要照片只要意境（需提供照片，照片不出现） | Image |
 | **still-image-motion-director** | 图生视频、图片动起来、让图动、i2v、即梦、motion prompt、动效方向（需提供静态图片） | Motion prompt |
 | **doneai** | 活动海报、Banner、数据战报、内部公告、社媒配图、运营物料、快速出图、信息图、知识卡片 | Image (via API) |
+| **gpt-image2-skill** | GPT Image 2, gpt-image2, AI image gen, text-to-image, image editing, prompt templates | PNG (CLI) |
+| **image-to-editable-ppt** | Screenshot to PPT, image to editable PPT, PDF to PPT, image-based PPTX to editable | `.pptx` |
+| **xxg-portrait-rebuild-light** | Portrait rebuild, portrait relighting, portrait photo editing, image-edit reconstruction | Edited image |
 
 ### How to Choose
 
@@ -55,6 +58,9 @@ A collection of drawing Agents, shared across **Cursor**, **Codex**, and **Claud
 | Turn a photo into an abstract illustration (photo removed) | **scene-distillation-zine** |
 | Get a motion prompt for image-to-video generation | **still-image-motion-director** |
 | Quickly produce office banners/announcements/infographics | **doneai** |
+| Generate/edit images with GPT Image 2 | **gpt-image2-skill** |
+| Convert screenshots/images/PDFs to editable PPT | **image-to-editable-ppt** |
+| Professional portrait relighting and reconstruction | **xxg-portrait-rebuild-light** |
 
 ---
 
@@ -95,7 +101,10 @@ draw-agent/
 │   ├── scenes-gathered-zine/SKILL.md
 │   ├── scene-distillation-zine/SKILL.md
 │   ├── still-image-motion-director/SKILL.md
-│   └── doneai/SKILL.md
+│   ├── doneai/SKILL.md
+│   ├── gpt-image2-skill/SKILL.md
+│   ├── image-to-editable-ppt/SKILL.md
+│   └── xxg-portrait-rebuild-light/SKILL.md
 ├── references/                     # Style references for fireworks-diagram
 ├── schemas/                        # JSON schemas for diagram validation
 ├── scripts/                        # Helper scripts (geometry check, etc.)
@@ -113,7 +122,8 @@ Clone this repo anywhere, then create a symlink so Cursor discovers the skills g
 ```bash
 for skill in draw-agent-router fireworks-diagram auto-diagram drawio-skill html-doc \
              lieflat-charts zine-poster scenes-gathered-zine scene-distillation-zine \
-             still-image-motion-director doneai; do
+             still-image-motion-director doneai gpt-image2-skill image-to-editable-ppt \
+             xxg-portrait-rebuild-light; do
   ln -sf /path/to/draw-agent/.cursor/skills/$skill ~/.cursor/skills/$skill
 done
 ```
