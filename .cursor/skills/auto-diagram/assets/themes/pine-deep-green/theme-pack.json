@@ -1,0 +1,189 @@
+{
+  "id": "pine-deep-green",
+  "display_name": "深松绿暗夜",
+  "kind": "builtin",
+  "status": "available",
+  "summary": "深松绿渐变舞台配合荧绿强调和灰绿连线，适合深色运营链路、物流与供应链总览图。",
+  "source": {
+    "origin": "built-in",
+    "notes": "从 logistics-dark-cn-pressure 的 pine-deep-green 方案抽象成官方内置主题包，保留深松绿舞台、荧绿标题线和灰绿连线的稳定视觉底座。"
+  },
+  "preview_asset": "assets/themes/pine-deep-green/preview.png",
+  "recommended_for": [
+    "物流全链路总览图",
+    "供应链与履约流程图",
+    "深色运营驾驶舱总图",
+    "需要绿色深色舞台的系统链路图"
+  ],
+  "default_when": [
+    "用户明确想要绿色背景的深色主题",
+    "图面需要深色运营舞台而不是蓝色技术舞台",
+    "希望用荧绿强调主标题、主说明卡和关键分组"
+  ],
+  "avoid_for": [
+    "白底老板汇报和可打印 PPT",
+    "需要强蓝色科技感主轴的架构图",
+    "需要高亮霓虹赛博感或极暖橙铜主轴的图"
+  ],
+  "tokens": {
+    "background": {
+      "page": "#07100c",
+      "surface": "rgba(11, 24, 17, 0.94)",
+      "canvas": "#0c1712",
+      "grid": "#1f3028",
+      "stage_fill": "rgba(11, 17, 14, 0.90)",
+      "stage_stroke": "#355243",
+      "title": "#f3f7f4",
+      "subtitle": "#97aa9f",
+      "text_primary": "#f3f7f4",
+      "text_secondary": "#97aa9f",
+      "edge": "#6f8e79",
+      "edge_label": "#97aa9f"
+    },
+    "semantic_roles": {
+      "frontend": {
+        "fill": "rgba(147, 197, 253, 0.16)",
+        "stroke": "#93c5fd",
+        "text": "#e6eef4"
+      },
+      "backend": {
+        "fill": "rgba(45, 212, 191, 0.16)",
+        "stroke": "#2dd4bf",
+        "text": "#e6eef4"
+      },
+      "database": {
+        "fill": "rgba(192, 132, 252, 0.16)",
+        "stroke": "#c084fc",
+        "text": "#f3f7f4"
+      },
+      "cloud": {
+        "fill": "rgba(251, 191, 36, 0.16)",
+        "stroke": "#fbbf24",
+        "text": "#f3f7f4"
+      },
+      "security": {
+        "fill": "rgba(251, 113, 133, 0.16)",
+        "stroke": "#fb7185",
+        "text": "#f3f7f4"
+      },
+      "external": {
+        "fill": "rgba(185, 197, 207, 0.16)",
+        "stroke": "#b9c5cf",
+        "text": "#f3f7f4"
+      },
+      "message_bus": {
+        "fill": "rgba(251, 146, 60, 0.16)",
+        "stroke": "#fb923c",
+        "text": "#f3f7f4"
+      }
+    },
+    "typography": {
+      "families": [
+        "PingFang SC",
+        "Helvetica Neue",
+        "Noto Sans CJK SC",
+        "sans-serif"
+      ],
+      "title": {
+        "size": 40,
+        "weight": 700,
+        "letter_spacing_em": 0.0
+      },
+      "subtitle": {
+        "size": 17,
+        "weight": 500,
+        "letter_spacing_em": 0.0
+      },
+      "group_title": {
+        "size": 14,
+        "weight": 700,
+        "letter_spacing_em": 0.08
+      },
+      "node_title": {
+        "size": 24,
+        "weight": 700,
+        "letter_spacing_em": 0.0
+      },
+      "node_body": {
+        "size": 13,
+        "weight": 500,
+        "letter_spacing_em": 0.0
+      },
+      "note_title": {
+        "size": 22,
+        "weight": 700,
+        "letter_spacing_em": 0.0
+      },
+      "note_body": {
+        "size": 12,
+        "weight": 500,
+        "letter_spacing_em": 0.0
+      },
+      "edge_label": {
+        "size": 12,
+        "weight": 500,
+        "letter_spacing_em": 0.0
+      },
+      "legend": {
+        "size": 12,
+        "weight": 500,
+        "letter_spacing_em": 0.0
+      }
+    },
+    "spacing": {
+      "diagram_padding": 32,
+      "stage_padding": 32,
+      "group_padding": 24,
+      "component_min_gap_y": 36,
+      "legend_gap_y": 18,
+      "card_gap": 16,
+      "node_pad_x": 22,
+      "node_pad_top": 18,
+      "node_pad_bottom": 18
+    },
+    "shape": {
+      "node_radius": 18,
+      "group_radius": 22,
+      "stage_radius": 28,
+      "card_radius": 22
+    },
+    "lines": {
+      "stroke_width": 2.0,
+      "boundary_dash": "6,5",
+      "security_dash": "4,4",
+      "auth_dash": "5,5",
+      "arrow_marker_width": 10,
+      "arrow_marker_height": 8,
+      "arrow_color": "#6f8e79",
+      "edge_label_backplate": "#0c1712"
+    },
+    "chrome": {
+      "html_shell": true,
+      "header_pulse": true,
+      "summary_cards": true,
+      "footer": true,
+      "grid_background": true,
+      "opaque_node_mask": true
+    }
+  },
+  "soft_hints": {
+    "mood": [
+      "dark",
+      "green",
+      "operational"
+    ],
+    "density_bias": "medium",
+    "annotation_style": "outlined dark cards with restrained green emphasis",
+    "style_summary_seed": "深松绿渐变底 + 荧绿强调线 + 灰绿连线 + 低饱和多语义节点 + 暗色分组舞台",
+    "allowed_overrides": [
+      "accent shift toward cyan or amber",
+      "lighter summary cards",
+      "reduced top chrome weight"
+    ],
+    "avoid": [
+      "大面积蓝色主轴覆盖绿色基调",
+      "过度霓虹发光",
+      "用主题包替代布局判断"
+    ]
+  }
+}

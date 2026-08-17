@@ -1,0 +1,30 @@
+<!-- KPI Card Component -->
+<!-- 使用场景：展示关键数字指标，多个卡片用 grid 排列 -->
+<!-- 布局示例：<div class="grid grid-cols-1 md:grid-cols-3 gap-6"> -->
+<div class="bg-white rounded-lg shadow p-6 hover:shadow-md transition">
+    <div class="text-sm text-gray-500 mb-2">{{指标名称}}</div>
+    <div class="text-3xl font-bold text-primary">{{数值}}</div>
+    <div class="text-sm mt-2 {{变化率颜色}}">
+        {{变化方向}} {{变化率}}% 环比
+    </div>
+</div>
+
+<!-- 使用示例：
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="text-sm text-gray-500 mb-2">总营收</div>
+        <div class="text-3xl font-bold text-blue-600">¥128.5K</div>
+        <div class="text-sm mt-2 text-green-600">↑ 12.3% 环比</div>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="text-sm text-gray-500 mb-2">活跃用户</div>
+        <div class="text-3xl font-bold text-purple-600">8,540</div>
+        <div class="text-sm mt-2 text-green-600">↑ 8.7% 环比</div>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="text-sm text-gray-500 mb-2">转化率</div>
+        <div class="text-3xl font-bold text-orange-500">3.2%</div>
+        <div class="text-sm mt-2 text-red-600">↓ 0.5% 环比</div>
+    </div>
+</div>
+-->

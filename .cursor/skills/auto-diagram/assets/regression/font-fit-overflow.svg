@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420">
+  <style>
+    .ad-note-title { font: 700 22px "SF Mono", Menlo, monospace; fill: #fff7e8; }
+    .ad-note-body { font: 400 18px "SF Mono", Menlo, monospace; fill: #f7ead1; }
+  </style>
+
+  <rect x="0" y="0" width="1200" height="420" fill="#050607"/>
+
+  <g class="ad-node" data-node-id="wide-note" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-note-box" x="180" y="112" width="420" height="118" rx="18" ry="18" fill="#18160f" stroke="#facc15" stroke-width="2"/>
+    <text class="ad-note-title" x="390" y="152" text-anchor="middle">终端琥珀主题说明</text>
+    <text class="ad-note-body" x="390" y="186" text-anchor="middle">Terminal Amber 切换到等宽字体后，说明卡可能突然变宽，需要自动折行并重新居中。</text>
+  </g>
+</svg>

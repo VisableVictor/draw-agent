@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1720 930">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5f8fb"/>
+      <stop offset="100%" stop-color="#eef3f8"/>
+    </linearGradient>
+    <linearGradient id="hero-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f6d77"/>
+      <stop offset="100%" stop-color="#184e77"/>
+    </linearGradient>
+    <marker id="ad-arrow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#4b6478"/>
+    </marker>
+    <style>
+      .ad-title { font: 700 34px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #183149; }
+      .ad-subtitle { font: 400 16px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #5d7489; }
+      .ad-group-title { font: 700 13px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #44637a; letter-spacing: 0.08em; }
+      .ad-node-title { font: 700 19px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #17344a; }
+      .ad-node-body { font: 400 13px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #4f6a80; }
+      .ad-note-title { font: 700 20px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #ffffff; }
+      .ad-note-body { font: 400 14px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #d8edf4; }
+      .ad-edge { stroke: #4b6478; stroke-width: 2.5; fill: none; marker-end: url(#ad-arrow); }
+      .ad-edge-label { font: 600 11px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #5e778b; }
+      .ad-legend { font: 400 12px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #687f92; }
+      .stage-box { fill: #ffffff; stroke: #ced9e3; stroke-width: 2; }
+      .group-box { fill: rgba(255,255,255,0.62); stroke: #dae4ec; stroke-width: 1.5; }
+      .top-control { fill: #dbeafe; }
+      .top-scheduler { fill: #ccfbf1; }
+      .top-compute { fill: #d1fae5; }
+      .top-detail { fill: #dcfce7; }
+      .top-fabric { fill: #ede9fe; }
+      .top-memory { fill: #fef3c7; }
+      .top-controller { fill: #fde68a; }
+      .note-box { fill: url(#hero-grad); }
+      .memory-note { fill: #24476a; }
+      .divider { stroke: #d7e4eb; stroke-width: 1.2; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1720" height="930" fill="url(#bg-grad)"/>
+
+  <text class="ad-title" x="72" y="78">How GPU Modules Work Together</text>
+  <text class="ad-subtitle" x="72" y="108">A report-ready view of how the front end, repeated SM/CU tiles, and the memory fabric cooperate inside the die.</text>
+
+  <g class="ad-node" data-node-id="summary-card" data-role="annotation" data-weight="heavy" data-pad-x="28" data-pad-top="20" data-pad-bottom="20">
+    <rect class="ad-note-box note-box" x="1018" y="52" width="632" height="110" rx="24" ry="24"/>
+    <text class="ad-note-title" x="1334" y="90" text-anchor="middle">Core Message</text>
+    <text class="ad-note-body" x="1334" y="116" text-anchor="middle">
+      <tspan x="1334" dy="0">A GPU stays fast because a small control front end keeps many repeated</tspan>
+      <tspan x="1334" dy="18">SM/CU tiles busy while shared caches and memory controllers keep data moving.</tspan>
+    </text>
+  </g>
+
+  <g class="ad-stage" data-stage-id="main-stage">
+    <rect class="stage-box ad-stage-box" x="52" y="188" width="1616" height="602" rx="28" ry="28"/>
+  </g>
+  <text class="ad-group-title" x="84" y="214">GPU DIE</text>
+
+  <g class="ad-group" data-group-id="control-dispatch">
+    <rect class="ad-group-box group-box" x="72" y="236" width="460" height="520" rx="24" ry="24"/>
+    <text class="ad-group-title" x="100" y="264">CONTROL &amp; DISPATCH</text>
+  </g>
+
+  <g class="ad-group" data-group-id="parallel-compute">
+    <rect class="ad-group-box group-box" x="552" y="236" width="670" height="520" rx="24" ry="24"/>
+    <text class="ad-group-title" x="580" y="264">PARALLEL COMPUTE ARRAY</text>
+  </g>
+
+  <g class="ad-group" data-group-id="memory-fabric">
+    <rect class="ad-group-box group-box" x="1242" y="236" width="406" height="520" rx="24" ry="24"/>
+    <text class="ad-group-title" x="1270" y="264">MEMORY FABRIC</text>
+  </g>
+
+  <g class="ad-node" data-node-id="command-processor" data-stage-id="main-stage" data-group-id="control-dispatch" data-role="secondary" data-row="top-chain" data-flow-level="core" data-pad-x="22" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box stage-box" x="92" y="330" width="180" height="126" rx="18" ry="18"/>
+    <rect class="top-control" x="92" y="330" width="180" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="182" y="379" text-anchor="middle" font-size="17">
+      <tspan x="182" dy="0">Command</tspan>
+      <tspan x="182" dy="18">Processor</tspan>
+    </text>
+    <text class="ad-node-body" x="182" y="423" text-anchor="middle">
+      <tspan x="182" dy="0">accept kernels</tspan>
+      <tspan x="182" dy="18">queue commands</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="global-scheduler" data-stage-id="main-stage" data-group-id="control-dispatch" data-role="primary" data-row="top-chain" data-flow-level="core" data-pad-x="22" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box stage-box" x="322" y="330" width="180" height="126" rx="18" ry="18"/>
+    <rect class="top-scheduler" x="322" y="330" width="180" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="412" y="379" text-anchor="middle" font-size="17">
+      <tspan x="412" dy="0">Global</tspan>
+      <tspan x="412" dy="18">Scheduler</tspan>
+    </text>
+    <text class="ad-node-body" x="412" y="423" text-anchor="middle">
+      <tspan x="412" dy="0">keep ready warps</tspan>
+      <tspan x="412" dy="18">hide latency</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="sm-array" data-stage-id="main-stage" data-group-id="parallel-compute" data-role="primary" data-row="top-chain" data-flow-level="core" data-pad-x="28" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box stage-box" x="586" y="320" width="602" height="126" rx="18" ry="18"/>
+    <rect class="top-compute" x="586" y="320" width="602" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="887" y="364" text-anchor="middle">Repeated SM / CU Tiles</text>
+    <text class="ad-node-body" x="887" y="390" text-anchor="middle">
+      <tspan x="887" dy="0">Many identical tiles run warps or wavefronts in parallel.</tspan>
+      <tspan x="887" dy="18">Each tile combines local scheduling, execution lanes,</tspan>
+      <tspan x="887" dy="18">and a nearby shared-memory plus L1 working set.</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="warp-schedulers" data-stage-id="main-stage" data-group-id="parallel-compute" data-role="support" data-row="tile-detail" data-flow-level="branch" data-pad-x="20" data-pad-top="16" data-pad-bottom="16">
+    <rect class="ad-node-box stage-box" x="586" y="496" width="178" height="104" rx="16" ry="16"/>
+    <rect class="top-detail" x="586" y="496" width="178" height="12" rx="16" ry="16"/>
+    <text class="ad-node-title" x="675" y="535" text-anchor="middle" font-size="15">Warp Schedulers</text>
+    <text class="ad-node-body" x="675" y="560" text-anchor="middle" font-size="12">
+      <tspan x="675" dy="0">keep ready warps</tspan>
+      <tspan x="675" dy="18">in flight</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="execution-lanes" data-stage-id="main-stage" data-group-id="parallel-compute" data-role="support" data-row="tile-detail" data-flow-level="branch" data-pad-x="20" data-pad-top="16" data-pad-bottom="16">
+    <rect class="ad-node-box stage-box" x="782" y="496" width="210" height="104" rx="16" ry="16"/>
+    <rect class="top-detail" x="782" y="496" width="210" height="12" rx="16" ry="16"/>
+    <text class="ad-node-title" x="887" y="535" text-anchor="middle" font-size="16">ALU / Tensor / SFU</text>
+    <text class="ad-node-body" x="887" y="560" text-anchor="middle" font-size="12">
+      <tspan x="887" dy="0">execute instructions</tspan>
+      <tspan x="887" dy="18">for many lanes at once</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="shared-l1" data-stage-id="main-stage" data-group-id="parallel-compute" data-role="support" data-row="tile-detail" data-flow-level="branch" data-pad-x="20" data-pad-top="16" data-pad-bottom="16">
+    <rect class="ad-node-box stage-box" x="1010" y="496" width="178" height="104" rx="16" ry="16"/>
+    <rect class="top-detail" x="1010" y="496" width="178" height="12" rx="16" ry="16"/>
+    <text class="ad-node-title" x="1099" y="535" text-anchor="middle" font-size="16">Shared + L1</text>
+    <text class="ad-node-body" x="1099" y="560" text-anchor="middle" font-size="12">
+      <tspan x="1099" dy="0">reuse nearby data</tspan>
+      <tspan x="1099" dy="18">before going outward</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="on-chip-fabric" data-stage-id="main-stage" data-group-id="parallel-compute" data-role="support" data-row="3" data-col="fabric" data-flow-level="aux" data-pad-x="22" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-node-box stage-box" x="620" y="648" width="540" height="92" rx="16" ry="16"/>
+    <rect class="top-fabric" x="620" y="648" width="540" height="12" rx="16" ry="16"/>
+    <text class="ad-node-title" x="890" y="683" text-anchor="middle" font-size="18">On-chip Fabric</text>
+    <text class="ad-node-body" x="890" y="706" text-anchor="middle" font-size="12">
+      <tspan x="890" dy="0">cross-SM sync, routing, and coherence traffic</tspan>
+      <tspan x="890" dy="17">move here before requests reach shared cache.</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="l2-cache" data-stage-id="main-stage" data-group-id="memory-fabric" data-role="secondary" data-row="top-chain" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box stage-box" x="1282" y="330" width="326" height="126" rx="18" ry="18"/>
+    <rect class="top-memory" x="1282" y="330" width="326" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="1445" y="376" text-anchor="middle">Shared L2 Cache</text>
+    <text class="ad-node-body" x="1445" y="401" text-anchor="middle">
+      <tspan x="1445" dy="0">shared cache for all</tspan>
+      <tspan x="1445" dy="18">SM / CU tiles</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="memory-controllers" data-stage-id="main-stage" data-group-id="memory-fabric" data-role="secondary" data-row="memory-bottom" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box stage-box" x="1282" y="500" width="326" height="118" rx="18" ry="18"/>
+    <rect class="top-controller" x="1282" y="500" width="326" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="1445" y="546" text-anchor="middle">Memory Controllers</text>
+    <text class="ad-node-body" x="1445" y="571" text-anchor="middle">
+      <tspan x="1445" dy="0">turn cache misses into</tspan>
+      <tspan x="1445" dy="18">HBM / GDDR bursts</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="hbm-gddr" data-role="annotation" data-pad-x="24" data-pad-top="16" data-pad-bottom="16">
+    <rect class="ad-note-box memory-note" x="1282" y="800" width="326" height="100" rx="18" ry="18"/>
+    <text class="ad-note-title" x="1445" y="838" text-anchor="middle">HBM / GDDR</text>
+    <text class="ad-note-body" x="1445" y="862" text-anchor="middle">
+      <tspan x="1445" dy="0">final bandwidth source</tspan>
+      <tspan x="1445" dy="18">for tensors and textures</tspan>
+    </text>
+  </g>
+
+  <path class="ad-edge" d="M 272 393 L 322 393"/>
+  <text class="ad-edge-label" x="297" y="312" text-anchor="middle">decode</text>
+
+  <path class="ad-edge" d="M 502 393 L 586 393"/>
+  <text class="ad-edge-label" x="544" y="312" text-anchor="middle">dispatch</text>
+
+  <path class="ad-edge" d="M 1188 393 L 1282 393"/>
+  <text class="ad-edge-label" x="1235" y="312" text-anchor="middle">requests</text>
+
+  <path class="ad-edge" d="M 675 446 L 675 496"/>
+  <path class="ad-edge" d="M 887 446 L 887 496"/>
+  <path class="ad-edge" d="M 1099 446 L 1099 496"/>
+
+  <path class="ad-edge" d="M 675 600 L 675 648"/>
+  <path class="ad-edge" d="M 887 600 L 887 648"/>
+  <path class="ad-edge" d="M 1099 600 L 1099 648"/>
+
+  <path class="ad-edge" d="M 1445 456 L 1445 500"/>
+  <text class="ad-edge-label" x="1506" y="484">cache miss</text>
+
+  <path class="ad-edge" d="M 1445 618 L 1445 804"/>
+  <text class="ad-edge-label" x="1510" y="728" text-anchor="middle">HBM / GDDR</text>
+
+  <text class="ad-legend" x="72" y="842">Reading tip: scan left to right for the main execution path, then read downward inside the compute group to see what repeats inside every SM / CU tile.</text>
+</svg>

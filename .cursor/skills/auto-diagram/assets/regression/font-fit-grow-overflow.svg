@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420">
+  <style>
+    .ad-note-title { font: 700 22px "SF Mono", Menlo, monospace; fill: #fff7e8; }
+    .ad-note-body { font: 400 16px "SF Mono", Menlo, monospace; fill: #f7ead1; }
+    .ad-edge { stroke: #64748b; stroke-width: 2.2; fill: none; }
+  </style>
+
+  <rect x="0" y="0" width="1200" height="420" fill="#050607"/>
+
+  <g class="ad-node" data-node-id="left-card" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-note-box" x="120" y="120" width="300" height="106" rx="18" ry="18" fill="#15191d" stroke="#94a3b8" stroke-width="2"/>
+    <text class="ad-note-title" x="270" y="164" text-anchor="middle">左侧输入</text>
+    <text class="ad-note-body" x="270" y="194" text-anchor="middle">保持固定尺寸即可。</text>
+  </g>
+
+  <g class="ad-node" data-node-id="grow-card" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-note-box" x="470" y="116" width="300" height="106" rx="18" ry="18" fill="#1a140f" stroke="#facc15" stroke-width="2"/>
+    <text class="ad-note-title" x="620" y="160" text-anchor="middle">终端琥珀说明卡</text>
+    <text class="ad-note-body" x="620" y="190" text-anchor="middle">切换到等宽字体后，这张说明卡需要先折行，再安全扩砖块，才能继续保持边界与留白。</text>
+  </g>
+
+  <g class="ad-node" data-node-id="right-card" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-note-box" x="840" y="120" width="240" height="106" rx="18" ry="18" fill="#101b18" stroke="#34d399" stroke-width="2"/>
+    <text class="ad-note-title" x="960" y="164" text-anchor="middle">右侧结果</text>
+    <text class="ad-note-body" x="960" y="194" text-anchor="middle">这里留出安全间距。</text>
+  </g>
+
+  <path class="ad-edge" d="M420 173 H470"/>
+  <path class="ad-edge" d="M770 173 H840"/>
+</svg>

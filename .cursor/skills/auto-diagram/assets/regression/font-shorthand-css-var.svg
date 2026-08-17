@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320">
+  <style>
+    :root {
+      --mono-base: "SFMono-Regular", "IBM Plex Mono", monospace;
+      --font-stack: var(--mono-base);
+      --cyan-400: #22d3ee;
+      --title-color: var(--cyan-400);
+    }
+
+    .title {
+      fill: var(--title-color);
+      font: 700 36px var(--font-stack);
+      letter-spacing: 0.6px;
+    }
+
+    .body {
+      fill: #cbd5e1;
+      font: 400 18px var(--font-stack);
+    }
+  </style>
+
+  <rect x="24" y="24" width="1152" height="272" rx="28" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+  <text class="title" x="72" y="112">font shorthand with CSS vars</text>
+  <text class="body" x="72" y="168">This regression fixture keeps the browser-friendly authoring pattern that broke PNG export.</text>
+  <text class="body" x="72" y="206">The raster copy must materialize CSS tokens before it reaches rsvg-convert.</text>
+</svg>

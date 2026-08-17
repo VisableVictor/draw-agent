@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+  <defs>
+    <marker id="arrow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="context-stroke"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="720" fill="#0b1323"/>
+
+  <text class="ad-title" x="72" y="78" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="34" font-weight="700" fill="#f5f7fb">物流履约调度总览</text>
+  <text class="ad-subtitle" x="72" y="110" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="16" font-weight="500" fill="#b6c2d0">标题区只保留结论、上下文与读图方式，不允许主图砖块或箭头压进来。</text>
+
+  <g class="ad-stage" data-stage-id="main-stage">
+    <rect class="ad-stage-box" x="56" y="170" width="1088" height="438" rx="26" ry="26" fill="#101b31" stroke="#314c73" stroke-width="2"/>
+  </g>
+
+  <g class="ad-group" data-group-id="order-side">
+    <rect class="ad-group-box" x="88" y="222" width="284" height="312" rx="20" ry="20" fill="#13233f" stroke="#355988" stroke-width="1.5"/>
+    <text class="ad-group-title" x="112" y="252" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="13" font-weight="700" fill="#a6b8cf">ORDER SIDE</text>
+  </g>
+
+  <g class="ad-group" data-group-id="control-side">
+    <rect class="ad-group-box" x="420" y="222" width="330" height="312" rx="20" ry="20" fill="#13233f" stroke="#355988" stroke-width="1.5"/>
+    <text class="ad-group-title" x="444" y="252" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="13" font-weight="700" fill="#a6b8cf">CONTROL SIDE</text>
+  </g>
+
+  <g class="ad-group" data-group-id="delivery-side">
+    <rect class="ad-group-box" x="798" y="222" width="314" height="312" rx="20" ry="20" fill="#13233f" stroke="#355988" stroke-width="1.5"/>
+    <text class="ad-group-title" x="822" y="252" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="13" font-weight="700" fill="#a6b8cf">DELIVERY SIDE</text>
+  </g>
+
+  <g class="ad-node" data-node-id="ingest" data-group-id="order-side" data-stage-id="main-stage" data-role="secondary" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box" x="118" y="286" width="224" height="116" rx="16" ry="16" fill="#1a2f51" stroke="#6ea8ff" stroke-width="2"/>
+    <text class="ad-node-title" x="230" y="332" text-anchor="middle" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="24" font-weight="700" fill="#f6f9ff">订单接入</text>
+    <text class="ad-node-body" x="230" y="362" text-anchor="middle" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="14" font-weight="500" fill="#d7e1f0">客户请求、库存快照、时效承诺</text>
+  </g>
+
+  <g class="ad-node" data-node-id="policy" data-group-id="control-side" data-stage-id="main-stage" data-role="primary" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box" x="474" y="286" width="222" height="126" rx="16" ry="16" fill="#183649" stroke="#39d0ff" stroke-width="2"/>
+    <text class="ad-node-title" x="585" y="332" text-anchor="middle" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="24" font-weight="700" fill="#effcff">调度控制塔</text>
+    <text class="ad-node-body" x="585" y="362" text-anchor="middle" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="14" font-weight="500" fill="#d7e1f0">
+      <tspan x="585" dy="0">波次、线路、承运商策略</tspan>
+      <tspan x="585" dy="18">与异常回流统一编排</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="fulfill" data-group-id="delivery-side" data-stage-id="main-stage" data-role="secondary" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box" x="846" y="286" width="218" height="116" rx="16" ry="16" fill="#24351a" stroke="#9de541" stroke-width="2"/>
+    <text class="ad-node-title" x="955" y="332" text-anchor="middle" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="24" font-weight="700" fill="#f7ffeb">履约配送</text>
+    <text class="ad-node-body" x="955" y="362" text-anchor="middle" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="14" font-weight="500" fill="#d7e1f0">出库、发运、签收回单</text>
+  </g>
+
+  <g class="ad-node" data-node-id="risk-note" data-group-id="control-side" data-stage-id="main-stage" data-role="annotation" data-flow-level="aux" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-note-box" x="478" y="436" width="214" height="86" rx="14" ry="14" fill="#2f2117" stroke="#ffad5c" stroke-width="1.6"/>
+    <text class="ad-note-title" x="585" y="478" text-anchor="middle" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="18" font-weight="700" fill="#fff4e8">异常补偿</text>
+    <text class="ad-note-body" x="585" y="502" text-anchor="middle" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="13" font-weight="500" fill="#ffe1c4">逆向工单回流、补派与回访</text>
+  </g>
+
+  <path class="ad-edge" data-edge-channel="primary" d="M342 344 H474" stroke="#8fbfff" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path class="ad-edge" data-edge-channel="primary" d="M696 344 H846" stroke="#8fbfff" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path class="ad-edge" data-edge-channel="feedback" d="M846 498 H696" stroke="#39d0ff" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path class="ad-edge" data-edge-channel="control" d="M585 412 V436" stroke="#ffad5c" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+
+  <text class="ad-edge-label" x="410" y="332" text-anchor="middle" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="12" font-weight="600" fill="#dbe6f3">标准主链</text>
+  <text class="ad-edge-label" x="770" y="486" text-anchor="middle" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="12" font-weight="600" fill="#dbe6f3">反馈回流</text>
+
+  <text class="ad-legend" x="72" y="664" font-family="PingFang SC, Helvetica Neue, sans-serif" font-size="12" font-weight="500" fill="#b6c2d0">图例：浅蓝=主链，青色=反馈回流，橙色=控制参数。读图顺序先看标题，再看中部主舞台，最后读页脚图例。</text>
+</svg>

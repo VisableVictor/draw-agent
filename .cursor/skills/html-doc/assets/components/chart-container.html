@@ -1,0 +1,72 @@
+<!-- Chart Container Component -->
+<!-- 使用场景：趋势分析、占比分布、对比分析 -->
+<!-- 依赖：Chart.js (https://cdn.jsdelivr.net/npm/chart.js) -->
+<div class="bg-white rounded-lg shadow p-6">
+    <h3 class="text-lg font-semibold mb-4">{{图表标题}}</h3>
+    <canvas id="{{图表 ID}}"></canvas>
+</div>
+
+<!-- Chart.js 初始化脚本示例（放在页面底部 <script> 标签中）：
+<script>
+// 集中管理所有图表数据
+const chartData = {
+    trend: {
+        labels: ['1月', '2月', '3月', '4月', '5月'],
+        datasets: [{
+            label: '营收 (K)',
+            data: [95, 105, 115, 120, 128.5],
+            borderColor: '#3B82F6',
+            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            tension: 0.3,
+            fill: true
+        }]
+    },
+    distribution: {
+        labels: ['产品 A', '产品 B', '产品 C', '其他'],
+        datasets: [{
+            data: [35, 25, 20, 20],
+            backgroundColor: ['#3B82F6', '#10B981', '#F59E0B', '#6B7280']
+        }]
+    }
+};
+
+// 初始化折线图
+const ctxTrend = document.getElementById('chart-trend');
+if (ctxTrend) {
+    new Chart(ctxTrend, {
+        type: 'line',
+        data: chartData.trend,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: true },
+                tooltip: { mode: 'index', intersect: false }
+            }
+        }
+    });
+}
+
+// 初始化环形图
+const ctxDist = document.getElementById('chart-distribution');
+if (ctxDist) {
+    new Chart(ctxDist, {
+        type: 'doughnut',
+        data: chartData.distribution,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'bottom' }
+            }
+        }
+    });
+}
+</script>
+-->
+
+<!-- 常用图表类型选择：
+- 趋势变化 → type: 'line'
+- 占比分布 → type: 'doughnut' 或 'pie'
+- 对比分析 → type: 'bar'
+- 多维评估 → type: 'radar'
+- 进度展示 → type: 'doughnut' (配合 rotation 和 circumference)
+-->

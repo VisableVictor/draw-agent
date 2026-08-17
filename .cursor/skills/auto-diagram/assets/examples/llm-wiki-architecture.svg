@@ -1,0 +1,299 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1840 1080">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5f8fb"/>
+      <stop offset="100%" stop-color="#edf3f8"/>
+    </linearGradient>
+    <linearGradient id="hero-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#155e75"/>
+      <stop offset="100%" stop-color="#1d4f91"/>
+    </linearGradient>
+    <marker id="ad-arrow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#496478"/>
+    </marker>
+    <style>
+      .ad-title { font: 700 34px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #163149; }
+      .ad-subtitle { font: 400 16px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #5c7488; }
+      .ad-group-title { font: 700 13px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #456279; letter-spacing: 0.08em; }
+      .ad-node-title { font: 700 19px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #17344a; }
+      .ad-node-body { font: 400 13px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #4e687d; }
+      .ad-note-title { font: 700 20px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #ffffff; }
+      .ad-note-body { font: 400 14px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #def0f8; }
+      .ad-legend { font: 400 12px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #688094; }
+      .ad-edge { stroke: #496478; stroke-width: 2.4; fill: none; marker-end: url(#ad-arrow); }
+      .ad-edge-label { font: 600 11px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #5a7488; }
+      .stage-box { fill: #ffffff; stroke: #cfdae4; stroke-width: 2; }
+      .group-box { fill: rgba(255,255,255,0.62); stroke: #d8e2ea; stroke-width: 1.4; }
+      .raw-top { fill: #dbeafe; }
+      .schema-top { fill: #d1fae5; }
+      .wiki-top { fill: #ccfbf1; }
+      .index-top { fill: #fef3c7; }
+      .human-top { fill: #ede9fe; }
+      .tool-top { fill: #fce7f3; }
+      .operation-top { fill: #e0f2fe; }
+      .hero-box { fill: url(#hero-grad); }
+      .dark-note { fill: #264b68; }
+      .soft-line { stroke: #d6e3ea; stroke-width: 1.2; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1840" height="1080" fill="url(#bg-grad)"/>
+
+  <text class="ad-title" x="72" y="78">LLM Wiki: A Compiled Knowledge Architecture</text>
+  <text class="ad-subtitle" x="72" y="108">Turn scattered sources into a persistent markdown wiki that the agent keeps updated, searchable, and explainable over time.</text>
+
+  <g>
+    <rect class="ad-note-box hero-box" x="1126" y="48" width="634" height="118" rx="24" ry="24"/>
+    <text class="ad-note-title" x="1443" y="88" text-anchor="middle">Core Message</text>
+    <text class="ad-note-body" x="1443" y="116" text-anchor="middle">
+      <tspan x="1443" dy="0">This pattern does not re-discover truth from raw files on every question.</tspan>
+      <tspan x="1443" dy="18">It compiles knowledge once into a maintained wiki, then keeps enriching it.</tspan>
+    </text>
+  </g>
+
+  <g class="ad-stage" data-stage-id="main-stage">
+    <rect class="stage-box ad-stage-box" x="52" y="188" width="1736" height="796" rx="28" ry="28"/>
+  </g>
+  <text class="ad-group-title" x="84" y="214">TECHNICAL STRUCTURE</text>
+
+  <g class="ad-group" data-group-id="raw-sources">
+    <rect class="ad-group-box group-box" x="76" y="236" width="304" height="620" rx="24" ry="24"/>
+    <text class="ad-group-title" x="104" y="264">RAW SOURCES</text>
+  </g>
+
+  <g class="ad-group" data-group-id="wiki-core">
+    <rect class="ad-group-box group-box" x="444" y="236" width="816" height="620" rx="24" ry="24"/>
+    <text class="ad-group-title" x="472" y="264">COMPILED WIKI CORE</text>
+  </g>
+
+  <g class="ad-group" data-group-id="usage-loop">
+    <rect class="ad-group-box group-box" x="1324" y="236" width="440" height="620" rx="24" ry="24"/>
+    <text class="ad-group-title" x="1352" y="264">USER LOOP AND TOOLS</text>
+  </g>
+
+  <g class="ad-node" data-node-id="raw-articles" data-group-id="raw-sources" data-pad-x="22" data-pad-top="16" data-pad-bottom="16">
+    <rect class="ad-node-box stage-box" x="104" y="322" width="248" height="104" rx="18" ry="18"/>
+    <rect class="raw-top" x="104" y="322" width="248" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="228" y="364" text-anchor="middle">Articles and Papers</text>
+    <text class="ad-node-body" x="228" y="389" text-anchor="middle">
+      <tspan x="228" dy="0">web clips, reports,</tspan>
+      <tspan x="228" dy="18">notes from reading</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="raw-transcripts" data-group-id="raw-sources" data-pad-x="22" data-pad-top="12" data-pad-bottom="10">
+    <rect class="ad-node-box stage-box" x="104" y="454" width="248" height="110" rx="18" ry="18"/>
+    <rect class="raw-top" x="104" y="454" width="248" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="228" y="490" text-anchor="middle" font-size="17">
+      <tspan x="228" dy="0">Notes and</tspan>
+      <tspan x="228" dy="18">Transcripts</tspan>
+    </text>
+    <text class="ad-node-body" x="228" y="521" text-anchor="middle">
+      <tspan x="228" dy="0">meetings, calls,</tspan>
+      <tspan x="228" dy="18">journals, project docs</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="raw-assets" data-group-id="raw-sources" data-pad-x="22" data-pad-top="12" data-pad-bottom="10">
+    <rect class="ad-node-box stage-box" x="104" y="586" width="248" height="110" rx="18" ry="18"/>
+    <rect class="raw-top" x="104" y="586" width="248" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="228" y="622" text-anchor="middle" font-size="17">
+      <tspan x="228" dy="0">Images and</tspan>
+      <tspan x="228" dy="18">Data Files</tspan>
+    </text>
+    <text class="ad-node-body" x="228" y="653" text-anchor="middle">
+      <tspan x="228" dy="0">screenshots, tables,</tspan>
+      <tspan x="228" dy="18">assets and evidence</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="raw-truth" data-group-id="raw-sources" data-role="annotation" data-pad-x="22" data-pad-top="12" data-pad-bottom="10">
+    <rect class="ad-note-box dark-note" x="104" y="728" width="248" height="106" rx="18" ry="18"/>
+    <text class="ad-note-title" x="228" y="762" text-anchor="middle">Why Raw Matters</text>
+    <text class="ad-note-body" x="228" y="784" text-anchor="middle">
+      <tspan x="228" dy="0">Immutable source</tspan>
+      <tspan x="228" dy="18">of truth. The agent</tspan>
+      <tspan x="228" dy="18">reads it but never edits it.</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="schema" data-group-id="wiki-core" data-pad-x="24" data-pad-top="12" data-pad-bottom="12">
+    <rect class="ad-node-box stage-box" x="668" y="286" width="368" height="108" rx="18" ry="18"/>
+    <rect class="schema-top" x="668" y="286" width="368" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="852" y="324" text-anchor="middle">Schema File</text>
+    <text class="ad-node-body" x="852" y="342" text-anchor="middle">
+      <tspan x="852" dy="0">CLAUDE.md / AGENTS.md sets naming,</tspan>
+      <tspan x="852" dy="18">page types, ingest steps,</tspan>
+      <tspan x="852" dy="18">and maintenance discipline.</tspan>
+    </text>
+  </g>
+
+  <g class="ad-group" data-group-id="wiki-shell">
+    <rect class="ad-group-box stage-box" x="482" y="408" width="740" height="330" rx="24" ry="24"/>
+    <rect class="wiki-top" x="482" y="408" width="740" height="16" rx="24" ry="24"/>
+    <text class="ad-node-title" x="852" y="448" text-anchor="middle">wiki/ - Persistent, LLM-Maintained Markdown Layer</text>
+    <text class="ad-node-body" x="852" y="474" text-anchor="middle">
+      <tspan x="852" dy="0">The agent owns this layer: it writes pages, revises synthesis, maintains links,</tspan>
+      <tspan x="852" dy="18">flags contradictions, and keeps the knowledge base current.</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="overview" data-group-id="wiki-shell" data-pad-x="18" data-pad-top="12" data-pad-bottom="10">
+    <rect class="ad-node-box stage-box" x="514" y="494" width="196" height="88" rx="16" ry="16"/>
+    <rect class="wiki-top" x="514" y="494" width="196" height="12" rx="16" ry="16"/>
+    <text class="ad-node-title" x="612" y="528" text-anchor="middle" font-size="16">Overview</text>
+    <text class="ad-node-body" x="612" y="551" text-anchor="middle" font-size="12">
+      <tspan x="612" dy="0">top-level thesis</tspan>
+      <tspan x="612" dy="17">and synthesis</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="concepts" data-group-id="wiki-shell" data-pad-x="18" data-pad-top="12" data-pad-bottom="10">
+    <rect class="ad-node-box stage-box" x="754" y="494" width="196" height="88" rx="16" ry="16"/>
+    <rect class="wiki-top" x="754" y="494" width="196" height="12" rx="16" ry="16"/>
+    <text class="ad-node-title" x="852" y="528" text-anchor="middle" font-size="16">Concept Pages</text>
+    <text class="ad-node-body" x="852" y="551" text-anchor="middle" font-size="12">
+      <tspan x="852" dy="0">topics, claims,</tspan>
+      <tspan x="852" dy="17">explanations</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="entities" data-group-id="wiki-shell" data-pad-x="18" data-pad-top="12" data-pad-bottom="10">
+    <rect class="ad-node-box stage-box" x="994" y="494" width="196" height="88" rx="16" ry="16"/>
+    <rect class="wiki-top" x="994" y="494" width="196" height="12" rx="16" ry="16"/>
+    <text class="ad-node-title" x="1092" y="528" text-anchor="middle" font-size="16">Entity Pages</text>
+    <text class="ad-node-body" x="1092" y="551" text-anchor="middle" font-size="12">
+      <tspan x="1092" dy="0">people, tools,</tspan>
+      <tspan x="1092" dy="17">systems, projects</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="sources" data-group-id="wiki-shell" data-pad-x="18" data-pad-top="10" data-pad-bottom="8">
+    <rect class="ad-node-box stage-box" x="634" y="614" width="196" height="80" rx="16" ry="16"/>
+    <rect class="wiki-top" x="634" y="614" width="196" height="12" rx="16" ry="16"/>
+    <text class="ad-node-title" x="732" y="646" text-anchor="middle" font-size="16">Source Summaries</text>
+    <text class="ad-node-body" x="732" y="665" text-anchor="middle" font-size="12">
+      <tspan x="732" dy="0">one page per source</tspan>
+      <tspan x="732" dy="17">with traceability</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="comparisons" data-group-id="wiki-shell" data-pad-x="18" data-pad-top="10" data-pad-bottom="8">
+    <rect class="ad-node-box stage-box" x="874" y="614" width="196" height="80" rx="16" ry="16"/>
+    <rect class="wiki-top" x="874" y="614" width="196" height="12" rx="16" ry="16"/>
+    <text class="ad-node-title" x="972" y="646" text-anchor="middle" font-size="16">Comparisons</text>
+    <text class="ad-node-body" x="972" y="665" text-anchor="middle" font-size="12">
+      <tspan x="972" dy="0">trade-offs, diffs,</tspan>
+      <tspan x="972" dy="17">decision views</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect class="stage-box" x="540" y="704" width="220" height="28" rx="12" ry="12"/>
+    <rect class="index-top" x="540" y="704" width="220" height="8" rx="12" ry="12"/>
+    <text class="ad-node-body" x="650" y="723" text-anchor="middle" font-size="11">
+      <tspan x="650" dy="0">index.md</tspan>
+      <tspan x="650" dy="14">catalog for navigation</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect class="stage-box" x="944" y="704" width="220" height="28" rx="12" ry="12"/>
+    <rect class="index-top" x="944" y="704" width="220" height="8" rx="12" ry="12"/>
+    <text class="ad-node-body" x="1054" y="723" text-anchor="middle" font-size="11">
+      <tspan x="1054" dy="0">log.md</tspan>
+      <tspan x="1054" dy="14">append-only operation timeline</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="human-agent" data-group-id="usage-loop" data-pad-x="20" data-pad-top="12" data-pad-bottom="10">
+    <rect class="ad-node-box stage-box" x="1360" y="320" width="368" height="108" rx="18" ry="18"/>
+    <rect class="human-top" x="1360" y="320" width="368" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="1544" y="354" text-anchor="middle">Human + LLM Pair</text>
+    <text class="ad-node-body" x="1544" y="376" text-anchor="middle">
+      <tspan x="1544" dy="0">Human curates sources</tspan>
+      <tspan x="1544" dy="18">and asks questions.</tspan>
+      <tspan x="1544" dy="18">The agent does bookkeeping.</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="obsidian" data-group-id="usage-loop" data-pad-x="20" data-pad-top="12" data-pad-bottom="10">
+    <rect class="ad-node-box stage-box" x="1360" y="462" width="368" height="108" rx="18" ry="18"/>
+    <rect class="tool-top" x="1360" y="462" width="368" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="1544" y="496" text-anchor="middle">Obsidian Frontend</text>
+    <text class="ad-node-body" x="1544" y="518" text-anchor="middle">
+      <tspan x="1544" dy="0">Browse graph view,</tspan>
+      <tspan x="1544" dy="18">backlinks, and pages</tspan>
+      <tspan x="1544" dy="18">like a knowledge IDE.</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="search-cli" data-group-id="usage-loop" data-pad-x="20" data-pad-top="12" data-pad-bottom="10">
+    <rect class="ad-node-box stage-box" x="1360" y="604" width="368" height="108" rx="18" ry="18"/>
+    <rect class="tool-top" x="1360" y="604" width="368" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="1544" y="638" text-anchor="middle">Optional Search and CLI</text>
+    <text class="ad-node-body" x="1544" y="660" text-anchor="middle">
+      <tspan x="1544" dy="0">At small scale the</tspan>
+      <tspan x="1544" dy="18">index is enough.</tspan>
+      <tspan x="1544" dy="18">qmd helps at larger scale.</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="outputs" data-group-id="usage-loop" data-pad-x="20" data-pad-top="12" data-pad-bottom="8">
+    <rect class="ad-node-box stage-box" x="1360" y="732" width="368" height="112" rx="18" ry="18"/>
+    <rect class="tool-top" x="1360" y="732" width="368" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="1544" y="766" text-anchor="middle">Outputs That Can Feed Back</text>
+    <text class="ad-node-body" x="1544" y="790" text-anchor="middle">
+      <tspan x="1544" dy="0">answers, comparison tables,</tspan>
+      <tspan x="1544" dy="18">slides, charts, or</tspan>
+      <tspan x="1544" dy="18">new pages from valuable analysis</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="ingest-op" data-role="primary" data-pad-x="20" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-node-box stage-box" x="454" y="904" width="260" height="54" rx="20" ry="20"/>
+    <rect class="operation-top" x="454" y="904" width="260" height="12" rx="20" ry="20"/>
+    <text class="ad-node-title" x="584" y="939" text-anchor="middle" font-size="17">Ingest</text>
+  </g>
+
+  <g class="ad-node" data-node-id="query-op" data-role="primary" data-pad-x="20" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-node-box stage-box" x="790" y="904" width="260" height="54" rx="20" ry="20"/>
+    <rect class="operation-top" x="790" y="904" width="260" height="12" rx="20" ry="20"/>
+    <text class="ad-node-title" x="920" y="939" text-anchor="middle" font-size="17">Query</text>
+  </g>
+
+  <g class="ad-node" data-node-id="lint-op" data-role="primary" data-pad-x="20" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-node-box stage-box" x="1126" y="904" width="260" height="54" rx="20" ry="20"/>
+    <rect class="operation-top" x="1126" y="904" width="260" height="12" rx="20" ry="20"/>
+    <text class="ad-node-title" x="1256" y="939" text-anchor="middle" font-size="17">Lint</text>
+  </g>
+
+  <path class="ad-edge" d="M 352 778 L 414 778 L 414 931 L 454 931"/>
+
+  <path class="ad-edge" d="M 852 394 L 852 400 L 414 400 L 414 931 L 454 931"/>
+
+  <path class="ad-edge" d="M 852 394 L 852 400 L 1248 400 L 1248 874 L 920 874 L 920 904"/>
+
+  <path class="ad-edge" d="M 852 394 L 852 400 L 1292 400 L 1292 874 L 1256 874 L 1256 904"/>
+
+  <path class="ad-edge" d="M 584 904 L 584 748 L 650 748 L 650 738"/>
+  <text class="ad-edge-label" x="664" y="774" text-anchor="middle">write and update</text>
+
+  <path class="ad-edge" d="M 920 904 L 920 748 L 1054 748 L 1054 738"/>
+  <text class="ad-edge-label" x="994" y="774" text-anchor="middle">read then synthesize</text>
+
+  <path class="ad-edge" d="M 1256 904 L 1256 748 L 1176 748 L 1176 738"/>
+  <text class="ad-edge-label" x="1240" y="774" text-anchor="middle">check drift and gaps</text>
+
+  <path class="ad-edge" d="M 1360 510 L 1222 510"/>
+
+  <path class="ad-edge" d="M 1360 652 L 1306 652 L 1306 884 L 1050 884 L 1050 904"/>
+
+  <path class="ad-edge" d="M 1050 931 L 1080 931 L 1080 878 L 1310 878 L 1310 794 L 1360 794"/>
+  <text class="ad-edge-label" x="1186" y="860" text-anchor="middle">answers, tables, slides</text>
+
+  <path class="ad-edge" d="M 1360 822 L 1310 822 L 1310 746 L 1164 746 L 1164 732"/>
+
+  <line class="soft-line" x1="552" y1="786" x2="1288" y2="786"/>
+  <text class="ad-legend" x="72" y="1020">Reading tip: left to right for the architecture, then bottom row for the operating loop. The core shift vs classic RAG is that knowledge is compiled into a persistent wiki instead of being rediscovered from raw chunks on every query.</text>
+</svg>

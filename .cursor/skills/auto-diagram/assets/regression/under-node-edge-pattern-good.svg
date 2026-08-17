@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      :root {
+        --page-bg: #08111f;
+        --stage-bg: #0d1c30;
+        --stage-stroke: #21496f;
+        --group-bg: #10253d;
+        --group-stroke: #2f628f;
+        --node-fill: #153150;
+        --node-stroke: #4e8ab9;
+        --text-primary: #eff6ff;
+        --text-secondary: #9cb7d3;
+        --edge-primary: #8ec5ff;
+        --edge-feedback: #36d7ff;
+        --edge-control: #ffb357;
+        --edge-exception: #ff6f91;
+      }
+
+      svg {
+        background: var(--page-bg);
+        font-family: "Avenir Next", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+
+      .ad-stage-box {
+        fill: var(--stage-bg);
+        stroke: var(--stage-stroke);
+        stroke-width: 2;
+      }
+
+      .ad-group-box {
+        fill: var(--group-bg);
+        stroke: var(--group-stroke);
+        stroke-width: 1.5;
+      }
+
+      .ad-group-title {
+        fill: var(--text-secondary);
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+      }
+
+      .ad-node-box {
+        fill: var(--node-fill);
+        stroke: var(--node-stroke);
+        stroke-width: 2;
+      }
+
+      .ad-node-title {
+        fill: var(--text-primary);
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .ad-node-body {
+        fill: var(--text-secondary);
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .ad-edge {
+        fill: none;
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        marker-end: url(#ad-arrow);
+      }
+
+      .ad-edge[data-edge-channel="primary"] {
+        stroke: var(--edge-primary);
+      }
+
+      .ad-edge[data-edge-channel="feedback"] {
+        stroke: var(--edge-feedback);
+      }
+
+      .ad-edge[data-edge-channel="control"] {
+        stroke: var(--edge-control);
+      }
+
+      .ad-edge[data-edge-channel="exception"] {
+        stroke: var(--edge-exception);
+      }
+
+      .ad-edge-label {
+        fill: var(--text-primary);
+        font-size: 18px;
+        font-weight: 700;
+      }
+    </style>
+
+    <marker id="ad-arrow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="context-stroke"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="900" fill="#08111f"/>
+
+  <g class="ad-stage" data-stage-id="main-stage">
+    <rect class="ad-stage-box" x="72" y="160" width="1456" height="612" rx="28" ry="28"/>
+  </g>
+
+  <g class="ad-group" data-group-id="planning">
+    <rect class="ad-group-box" x="108" y="216" width="340" height="496" rx="24" ry="24"/>
+    <text class="ad-group-title" x="136" y="252">PLAN &amp; ORDER</text>
+  </g>
+
+  <g class="ad-group" data-group-id="dispatch">
+    <rect class="ad-group-box" x="464" y="216" width="656" height="496" rx="24" ry="24"/>
+    <text class="ad-group-title" x="492" y="252">DISPATCH &amp; CONTROL</text>
+  </g>
+
+  <g class="ad-group" data-group-id="fulfillment">
+    <rect class="ad-group-box" x="1128" y="216" width="344" height="496" rx="24" ry="24"/>
+    <text class="ad-group-title" x="1156" y="252">FULFILLMENT</text>
+  </g>
+
+  <path class="ad-edge" data-edge-id="order-to-routing" data-edge-channel="primary" d="M400 372 H488"/>
+  <path class="ad-edge" data-edge-id="routing-to-dispatch" data-edge-channel="primary" d="M736 372 H824"/>
+  <path class="ad-edge" data-edge-id="dispatch-to-delivery" data-edge-channel="primary" d="M1072 372 H1160"/>
+
+  <path class="ad-edge ad-edge-underlay" data-edge-id="feedback-reverse-loop" data-edge-channel="feedback" data-edge-occlusion="under-node" d="M1160 372 H432 V614"/>
+  <path class="ad-edge" data-edge-id="control-capacity" data-edge-channel="control" d="M940 614 H1200"/>
+  <path class="ad-edge" data-edge-id="exception-risk" data-edge-channel="exception" d="M1200 642 H940"/>
+
+  <g class="ad-node" data-node-id="order-intake" data-stage-id="main-stage" data-group-id="planning" data-role="secondary" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box" x="144" y="300" width="256" height="144" rx="18" ry="18"/>
+    <text class="ad-node-title" x="272" y="346" text-anchor="middle">订单接入</text>
+    <text class="ad-node-body" x="272" y="382" text-anchor="middle">
+      <tspan x="272" dy="0">多渠道订单汇总</tspan>
+      <tspan x="272" dy="24">时效与约束归一</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="routing" data-stage-id="main-stage" data-group-id="dispatch" data-role="secondary" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box" x="488" y="300" width="248" height="144" rx="18" ry="18"/>
+    <text class="ad-node-title" x="612" y="346" text-anchor="middle">智能路由</text>
+    <text class="ad-node-body" x="612" y="382" text-anchor="middle">
+      <tspan x="612" dy="0">仓网匹配与波次聚合</tspan>
+      <tspan x="612" dy="24">承运商策略预筛</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="dispatch" data-stage-id="main-stage" data-group-id="dispatch" data-role="primary" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box" x="824" y="300" width="248" height="144" rx="18" ry="18"/>
+    <text class="ad-node-title" x="948" y="346" text-anchor="middle">调度控制塔</text>
+    <text class="ad-node-body" x="948" y="382" text-anchor="middle">
+      <tspan x="948" dy="0">容量节拍与站点协调</tspan>
+      <tspan x="948" dy="24">改派阈值与回补策略</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="delivery" data-stage-id="main-stage" data-group-id="fulfillment" data-role="secondary" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box" x="1160" y="300" width="256" height="144" rx="18" ry="18"/>
+    <text class="ad-node-title" x="1288" y="346" text-anchor="middle">履约配送</text>
+    <text class="ad-node-body" x="1288" y="382" text-anchor="middle">
+      <tspan x="1288" dy="0">揽收 出库 干支配</tspan>
+      <tspan x="1288" dy="24">签收与回单闭环</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="feedback" data-stage-id="main-stage" data-group-id="planning" data-role="support" data-flow-level="branch" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box" x="130" y="560" width="284" height="108" rx="18" ry="18"/>
+    <text class="ad-node-title" x="272" y="604" text-anchor="middle">逆向反馈池</text>
+    <text class="ad-node-body" x="272" y="634" text-anchor="middle">拒收 破损 超时 工单回流</text>
+  </g>
+
+  <g class="ad-node" data-node-id="risk-control" data-stage-id="main-stage" data-group-id="dispatch" data-role="support" data-flow-level="aux" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box" x="684" y="560" width="256" height="108" rx="18" ry="18"/>
+    <text class="ad-node-title" x="812" y="604" text-anchor="middle">运力风险控制</text>
+    <text class="ad-node-body" x="812" y="634" text-anchor="middle">容量告警 补单 熔断</text>
+  </g>
+
+  <g class="ad-node" data-node-id="signoff" data-stage-id="main-stage" data-group-id="fulfillment" data-role="support" data-flow-level="branch" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box" x="1200" y="560" width="248" height="108" rx="18" ry="18"/>
+    <text class="ad-node-title" x="1324" y="604" text-anchor="middle">签收回单</text>
+    <text class="ad-node-body" x="1324" y="634" text-anchor="middle">终端回执 客诉归档</text>
+  </g>
+
+  <text class="ad-edge-label" x="714" y="710">风险回流与逆向补偿</text>
+  <text class="ad-edge-label" x="1000" y="598">控制参数下发</text>
+  <text class="ad-edge-label" x="1016" y="690">异常告警</text>
+<metadata id="x-0bbf840c9616">v=8;s=39e10c5255bc7711c8;c=a9338566aaa17c1d;l=2f86cf5bdf4b;t=c2e0d88023</metadata></svg>

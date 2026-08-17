@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1840 1080">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5F8FB"/>
+      <stop offset="100%" stop-color="#ECF3F8"/>
+    </linearGradient>
+    <linearGradient id="hero-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0F5C73"/>
+      <stop offset="100%" stop-color="#1B4F90"/>
+    </linearGradient>
+    <marker id="ad-arrow" markerUnits="userSpaceOnUse" markerWidth="8.256" markerHeight="8.181" refX="7.082" refY="3.909" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#496478"/>
+    </marker>
+    <style>
+      .ad-title { font: 700 34px "Helvetica Neue", Arial, sans-serif; fill: #163149; }
+      .ad-subtitle { font: 400 16px "Helvetica Neue", Arial, sans-serif; fill: #5C7488; }
+      .ad-group-title { font: 700 13px "Helvetica Neue", Arial, sans-serif; fill: #456279; letter-spacing: 0.074em; }
+      .ad-node-title { font: 700 19px "Helvetica Neue", Arial, sans-serif; fill: #17344A; }
+      .ad-node-body { font: 400 13px "Helvetica Neue", Arial, sans-serif; fill: #4E687D; }
+      .ad-note-title { font: 700 20px "Helvetica Neue", Arial, sans-serif; fill: #FFFFFF; }
+      .ad-note-body { font: 400 14px "Helvetica Neue", Arial, sans-serif; fill: #DEF0F8; }
+      .ad-legend { font: 400 12px "Helvetica Neue", Arial, sans-serif; fill: #688094; }
+      .ad-edge { stroke: #496478; stroke-width: 2.294; fill: none; marker-end: url(#ad-arrow); }
+      .ad-edge-dashed { stroke: #8AA0B1; stroke-width: 2; fill: none; stroke-dasharray: 7 6; marker-end: url(#ad-arrow); }
+      .stage-box { fill: #FFFFFF; stroke: #CFDAE4; stroke-width: 2; }
+      .group-box { fill: rgba(255,255,255,0.62); stroke: #D8E2EA; stroke-width: 1.4; }
+      .input-top { fill: #DBEAFE; }
+      .brain-top { fill: #D1FAE5; }
+      .render-top { fill: #CCFBF1; }
+      .output-top { fill: #FCE7F3; }
+      .quality-top { fill: #FEF3C7; }
+      .hero-box { fill: url(#hero-grad); }
+      .dark-note { fill: #264B68; }
+      .soft-line { stroke: #D6E3EA; stroke-width: 1.193; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1840" height="1080" fill="url(#bg-grad)"/>
+
+  <text class="ad-title" x="72" y="78">auto-diagram Test Structure</text>
+  <text class="ad-subtitle" x="72" y="108">A simple report-ready map showing how the skill locks intent, turns it into a spec, and delivers clean diagram outputs.</text>
+
+  <g class="ad-node" data-node-id="core-message" data-role="annotation" data-flow-level="aux" data-pad-x="28" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-note-box hero-box" x="1052" y="46" width="708" height="136" rx="24.426" ry="23.935"/>
+    <text class="ad-note-title" x="1406" y="92" text-anchor="middle">Core Message</text>
+    <text class="ad-note-body" x="1406" y="122" text-anchor="middle">
+      <tspan x="1406" dy="0">This skill is not a template picker.</tspan>
+      <tspan x="1406" dy="18">It locks audience and story first,</tspan>
+      <tspan x="1406" dy="18">then routes to the right backend and quality gate.</tspan>
+    </text>
+  </g>
+
+  <g class="ad-stage" data-stage-id="main-stage">
+    <rect class="stage-box ad-stage-box" x="52" y="188" width="1736" height="796" rx="28.716" ry="27.402"/>
+  </g>
+  <text class="ad-group-title" x="84" y="214">TEST DIAGRAM PIPELINE</text>
+
+  <g class="ad-group" data-group-id="input-zone">
+    <rect class="ad-group-box group-box" x="76" y="236" width="332" height="618" rx="23.607" ry="24.532"/>
+    <text class="ad-group-title" x="104" y="264">INPUT AND GOAL LOCK</text>
+  </g>
+
+  <g class="ad-group" data-group-id="brain-zone">
+    <rect class="ad-group-box group-box" x="454" y="236" width="694" height="618" rx="23.496" ry="24.311"/>
+    <text class="ad-group-title" x="482" y="264">SPEC AND QUALITY CORE</text>
+  </g>
+
+  <g class="ad-group" data-group-id="output-zone">
+    <rect class="ad-group-box group-box" x="1194" y="236" width="570" height="618" rx="24.828" ry="24.898"/>
+    <text class="ad-group-title" x="1222" y="264">DELIVERY OUTPUTS</text>
+  </g>
+
+  <g class="ad-node" data-node-id="request" data-group-id="input-zone" data-stage-id="main-stage" data-role="secondary" data-flow-level="core" data-pad-x="22" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-node-box stage-box" x="98" y="318" width="288" height="110" rx="17.758" ry="18.143"/>
+    <rect class="input-top" x="98" y="318" width="288" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="242" y="355" text-anchor="middle">Raw Request</text>
+    <text class="ad-node-body" x="242" y="380" text-anchor="middle">
+      <tspan x="242" dy="0">A user asks for a diagram</tspan>
+      <tspan x="242" dy="18">before choosing engine or layout</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="goal-lock" data-group-id="input-zone" data-stage-id="main-stage" data-role="secondary" data-flow-level="core" data-pad-x="22" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-node-box stage-box" x="106" y="476" width="272" height="116" rx="18.26" ry="17.349"/>
+    <rect class="input-top" x="106" y="476" width="272" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="242" y="520" text-anchor="middle">Brainstorm Lock</text>
+    <text class="ad-node-body" x="242" y="545" text-anchor="middle">
+      <tspan x="242" dy="0">Audience, purpose,</tspan>
+      <tspan x="242" dy="18">story axis, style, density</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="constraints-note" data-group-id="input-zone" data-stage-id="main-stage" data-role="annotation" data-flow-level="aux" data-pad-x="22" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-note-box dark-note" x="100" y="642" width="284" height="144" rx="18.708" ry="18.733"/>
+    <text class="ad-note-title" x="242" y="688" text-anchor="middle">What Gets Locked</text>
+    <text class="ad-note-body" x="242" y="714" text-anchor="middle">
+      <tspan x="242" dy="0">Must-show modules</tspan>
+      <tspan x="242" dy="18">Must-not-show clutter</tspan>
+      <tspan x="242" dy="18">Formal notation or freeform</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="brief" data-group-id="brain-zone" data-stage-id="main-stage" data-role="primary" data-flow-level="core" data-pad-x="22" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-node-box stage-box" x="522" y="302" width="254" height="102" rx="18.084" ry="17.39"/>
+    <rect class="brain-top" x="522" y="302" width="254" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="649" y="338" text-anchor="middle">Diagram Brief</text>
+    <text class="ad-node-body" x="649" y="363" text-anchor="middle">
+      <tspan x="649" dy="0">Known facts, missing facts,</tspan>
+      <tspan x="649" dy="18">and candidate diagram family</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="spec" data-group-id="brain-zone" data-stage-id="main-stage" data-role="primary" data-flow-level="core" data-pad-x="22" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-node-box stage-box" x="828" y="302" width="274" height="102" rx="18.762" ry="17.4"/>
+    <rect class="brain-top" x="828" y="302" width="274" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="965" y="338" text-anchor="middle">Unified Spec</text>
+    <text class="ad-node-body" x="965" y="363" text-anchor="middle">
+      <tspan x="965" dy="0">Nodes, edges, groups,</tspan>
+      <tspan x="965" dy="18">legend and layout guardrails</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="renderer" data-group-id="brain-zone" data-stage-id="main-stage" data-role="primary" data-flow-level="core" data-pad-x="24" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-node-box stage-box" x="674" y="470" width="284" height="136" rx="18.03" ry="17.648"/>
+    <rect class="render-top" x="674" y="470" width="284" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="816" y="512" text-anchor="middle">Backend Routing</text>
+    <text class="ad-node-body" x="816" y="537" text-anchor="middle">
+      <tspan x="816" dy="0">SVG-first by default,</tspan>
+      <tspan x="816" dy="18">or route to Mermaid, Graphviz,</tspan>
+      <tspan x="816" dy="18">or PlantUML when needed</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="quality" data-group-id="brain-zone" data-stage-id="main-stage" data-role="primary" data-flow-level="core" data-pad-x="24" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-node-box stage-box" x="664" y="650" width="304" height="136" rx="18.081" ry="18.175"/>
+    <rect class="quality-top" x="664" y="650" width="304" height="14" rx="18" ry="18"/>
+    <text class="ad-node-title" x="816" y="692" text-anchor="middle">Quality Gates</text>
+    <text class="ad-node-body" x="816" y="717" text-anchor="middle">
+      <tspan x="816" dy="0">No overlap, no padding break,</tspan>
+      <tspan x="816" dy="18">no arrow crossing text</tspan>
+      <tspan x="816" dy="18">or riding long along borders</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="svg-master" data-group-id="output-zone" data-stage-id="main-stage" data-role="secondary" data-flow-level="branch" data-pad-x="22" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-node-box stage-box" x="1270" y="300" width="186" height="96" rx="15.257" ry="16.533"/>
+    <rect class="output-top" x="1270" y="300" width="186" height="14" rx="16" ry="16"/>
+    <text class="ad-node-title" x="1363" y="342" text-anchor="middle" font-size="17">SVG Master</text>
+    <text class="ad-node-body" x="1363" y="366" text-anchor="middle" font-size="12">
+      <tspan x="1363" dy="0">primary vector output</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="png-preview" data-group-id="output-zone" data-stage-id="main-stage" data-role="secondary" data-flow-level="branch" data-pad-x="22" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-node-box stage-box" x="1492" y="300" width="206" height="96" rx="16.049" ry="15.519"/>
+    <rect class="output-top" x="1492" y="300" width="206" height="14" rx="16" ry="16"/>
+    <text class="ad-node-title" x="1595" y="342" text-anchor="middle" font-size="17">PNG Preview</text>
+    <text class="ad-node-body" x="1595" y="366" text-anchor="middle" font-size="12">
+      <tspan x="1595" dy="0">fast review and delivery</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="editable-pptx" data-group-id="output-zone" data-stage-id="main-stage" data-role="secondary" data-flow-level="branch" data-pad-x="22" data-pad-top="14" data-pad-bottom="14">
+    <rect class="ad-node-box stage-box" x="1384" y="476" width="186" height="108" rx="16.121" ry="15.235"/>
+    <rect class="output-top" x="1384" y="476" width="186" height="14" rx="16" ry="16"/>
+    <text class="ad-node-title" x="1477" y="512" text-anchor="middle" font-size="17">Editable PPTX</text>
+    <text class="ad-node-body" x="1477" y="536" text-anchor="middle" font-size="12">
+      <tspan x="1477" dy="0">optional export from</tspan>
+      <tspan x="1477" dy="16">controlled SVG only</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="handoff-note" data-group-id="output-zone" data-stage-id="main-stage" data-role="annotation" data-flow-level="aux" data-pad-x="24" data-pad-top="16" data-pad-bottom="16">
+    <rect class="ad-note-box dark-note" x="1280" y="672" width="418" height="122" rx="20.643" ry="20.274"/>
+    <text class="ad-note-title" x="1489" y="716" text-anchor="middle">Final Handoff</text>
+    <text class="ad-note-body" x="1489" y="742" text-anchor="middle">
+      <tspan x="1489" dy="0">Return one key conclusion, a clean reading path,</tspan>
+      <tspan x="1489" dy="18">and only the files that passed review.</tspan>
+    </text>
+  </g>
+
+  <path class="ad-edge" d="M386 373 L522 373"/>
+  <path class="ad-edge" d="M378 534 L448 534 L448 353 L522 353"/>
+  <path class="ad-edge-dashed" d="M384 714 L476 714 L476 373 L522 373"/>
+  <path class="ad-edge" d="M776 353 L828 353"/>
+  <path class="ad-edge" d="M965 404 L965 444 L816 444 L816 470"/>
+  <path class="ad-edge" d="M816 606 L816 650"/>
+  <path class="ad-edge" d="M968 708 L1180 708 L1180 348 L1270 348"/>
+  <path class="ad-edge" d="M968 724 L1212 724 L1212 252 L1595 252 L1595 300"/>
+  <path class="ad-edge" d="M968 740 L1264 740 L1264 530 L1384 530"/>
+  <path class="ad-edge-dashed" d="M1477 584 L1477 640 L1489 640 L1489 672"/>
+
+  <path class="soft-line" d="M430 854 L1720 854"/>
+  <text class="ad-legend" x="84" y="886">Legend: solid arrows show the main production flow; dashed arrows show optional constraints or export branches.</text>
+
+  <g class="ad-node" data-node-id="chip-brainstorm" data-stage-id="main-stage" data-role="support" data-pad-x="18" data-pad-top="8" data-pad-bottom="8">
+    <rect class="ad-node-box stage-box" x="468" y="892" width="246" height="46" rx="11.985" ry="12.196"/>
+    <rect class="quality-top" x="468" y="892" width="246" height="8" rx="12" ry="12"/>
+    <text class="ad-node-body" x="591" y="913" text-anchor="middle" font-size="11">
+      <tspan x="591" dy="0">Step 1: lock audience and story</tspan>
+      <tspan x="591" dy="14">before drawing anything</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="chip-render" data-stage-id="main-stage" data-role="support" data-pad-x="18" data-pad-top="8" data-pad-bottom="8">
+    <rect class="ad-node-box stage-box" x="796" y="892" width="246" height="46" rx="11.898" ry="11.503"/>
+    <rect class="render-top" x="796" y="892" width="246" height="8" rx="12" ry="12"/>
+    <text class="ad-node-body" x="919" y="913" text-anchor="middle" font-size="11">
+      <tspan x="919" dy="0">Step 2: route to the right backend</tspan>
+      <tspan x="919" dy="14">and render the master output</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="chip-deliver" data-stage-id="main-stage" data-role="support" data-pad-x="18" data-pad-top="8" data-pad-bottom="8">
+    <rect class="ad-node-box stage-box" x="1124" y="892" width="246" height="46" rx="12.523" ry="12.317"/>
+    <rect class="output-top" x="1124" y="892" width="246" height="8" rx="12" ry="12"/>
+    <text class="ad-node-body" x="1247" y="913" text-anchor="middle" font-size="11">
+      <tspan x="1247" dy="0">Step 3: pass quality gates</tspan>
+      <tspan x="1247" dy="14">before any final delivery</tspan>
+    </text>
+  </g><metadata id="x-0bbf840c9616">v=8;s=c617cdc4b9f596fe19;c=4ea033f338284bab;l=c2d117cbe087;t=6e137bba7e</metadata></svg>

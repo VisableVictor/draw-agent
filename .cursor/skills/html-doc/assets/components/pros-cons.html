@@ -1,0 +1,75 @@
+<!-- Pros & Cons Component -->
+<!-- 使用场景：方案对比、优劣分析、决策依据 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Pros Column -->
+    <div class="bg-green-50 rounded-lg p-6">
+        <h3 class="text-lg font-bold text-green-800 mb-4 flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            {{方案名称}} - 优势
+        </h3>
+        <ul class="space-y-3">
+            <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span class="text-gray-700">优势点 1</span>
+            </li>
+            <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span class="text-gray-700">优势点 2</span>
+            </li>
+            <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span class="text-gray-700">优势点 3</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Cons Column -->
+    <div class="bg-red-50 rounded-lg p-6">
+        <h3 class="text-lg font-bold text-red-800 mb-4 flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+            </svg>
+            {{方案名称}} - 劣势
+        </h3>
+        <ul class="space-y-3">
+            <li class="flex items-start">
+                <span class="text-red-600 mr-2">✗</span>
+                <span class="text-gray-700">劣势点 1</span>
+            </li>
+            <li class="flex items-start">
+                <span class="text-red-600 mr-2">✗</span>
+                <span class="text-gray-700">劣势点 2</span>
+            </li>
+            <li class="flex items-start">
+                <span class="text-red-600 mr-2">✗</span>
+                <span class="text-gray-700">劣势点 3</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- 使用示例（多方案对比）：
+<div class="space-y-6">
+    <h3 class="text-xl font-bold">方案对比</h3>
+    
+    <!-- 方案 A vs 方案 B -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-green-50 rounded-lg p-6">
+            <h3 class="text-lg font-bold text-green-800 mb-4">✓ 方案 A - 自研</h3>
+            <ul class="space-y-3">
+                <li class="flex items-start"><span class="text-green-600 mr-2">✓</span><span class="text-gray-700">完全可控，定制化程度高</span></li>
+                <li class="flex items-start"><span class="text-green-600 mr-2">✓</span><span class="text-gray-700">数据安全有保障</span></li>
+            </ul>
+        </div>
+        <div class="bg-red-50 rounded-lg p-6">
+            <h3 class="text-lg font-bold text-red-800 mb-4">✗ 方案 A - 劣势</h3>
+            <ul class="space-y-3">
+                <li class="flex items-start"><span class="text-red-600 mr-2">✗</span><span class="text-gray-700">开发周期长，投入人力多</span></li>
+                <li class="flex items-start"><span class="text-red-600 mr-2">✗</span><span class="text-gray-700">需要持续维护成本</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+-->

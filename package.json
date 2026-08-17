@@ -1,0 +1,16 @@
+{
+  "name": "draw-agent",
+  "version": "1.2.0",
+  "description": "Agent Skills workspace for technical diagrams, drawio, auto-diagram, and HTML reports.",
+  "private": true,
+  "bin": {
+    "draw-agent": "scripts/fireworks.py"
+  },
+  "scripts": {
+    "test": "python3 -m unittest discover -s tests -v",
+    "examples": "python3 scripts/fireworks.py examples"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--
+  Aesthetic Direction: C. 数据驾驶舱
+  Display Font: JetBrains Mono (数字)  |  Body Font: IBM Plex Sans
+  Primary: #00D9FF (霓虹青)  |  Accent: #FF2D7A (霓虹品红)  |  Bg: #0B0F1A (深蓝近黑)
+  Texture: 细网格背景 + glow 边缘
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据看板</title>
+    <style>[v-cloak] { display: none; }</style>
+
+    <!-- 数据注入点：构建脚本会整段替换这个 <script data-template> 标签 -->
+    <script data-template>
+        /* 模板态示例数据：模板独立打开即可看到完整渲染效果。
+           构建脚本会将本标签整段替换为真实数据脚本。
+           示例数据本身即数据契约的活文档——字段名、类型、缺省值直观可见。 */
+        const D = {
+            meta: {
+                pageTitle: '运营数据看板',
+                dashTitle: '运营数据看板',
+                dashSubtitle: '示例数据，演示模板渲染效果',
+                updateDate: '2024-09-30',
+                primaryColor: '#00D9FF',
+                secondaryColor: '#FF2D7A',
+                footerText: '© 2024 数据团队 · 内部使用'
+            },
+            kpis: [
+                { label: '总营收',   value: '¥12.4M', trend: '+18%' },
+                { label: '订单数',   value: '8,234',  trend: '+12%' },
+                { label: '新增用户', value: '1,567',  trend: '+24%' },
+                { label: '留存率',   value: '76%',    trend: '-3%', trendDown: true }
+            ],
+            trendChart: {
+                title: '月度营收趋势',
+                labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+                seriesLabel: '营收（万元）',
+                data: [85, 92, 78, 105, 118, 124]
+            },
+            pieChart: {
+                title: '渠道占比',
+                labels: ['直营', '分销', '线上', '其他'],
+                data: [45, 25, 20, 10],
+                colors: ['#00D9FF', '#FF2D7A', '#FBBF24', '#7E8694']
+            },
+            table: {
+                title: '渠道表现明细',
+                head: ['渠道', '营收', '环比', '状态'],
+                rows: [
+                    ['直营', '¥5.6M', { text: '+22%', class: 'cell-up' },   { badge: { text: '健康',   class: 'badge-success' } }],
+                    ['分销', '¥3.1M', { text: '+8%',  class: 'cell-up' },   { badge: { text: '稳定',   class: 'badge-info' } }],
+                    ['线上', '¥2.5M', { text: '+34%', class: 'cell-up' },   { badge: { text: '增长中', class: 'badge-success' } }],
+                    ['其他', '¥1.2M', { text: '-5%',  class: 'cell-down' }, { badge: { text: '关注',   class: 'badge-warning' } }]
+                ]
+            }
+        };
+    </script>
+
+    <!-- Google Fonts: JetBrains Mono (数字) + IBM Plex Sans (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary:   D.meta.primaryColor   || '#00D9FF',
+                        secondary: D.meta.secondaryColor || '#FF2D7A',
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+    <style>
+        :root {
+            --font-display: 'JetBrains Mono', 'Menlo', monospace;
+            --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+            --color-bg: #0B0F1A;
+            --color-surface: #151B2B;
+            --color-ink: #E8EAF0;
+            --color-muted: #7E8694;
+            --color-primary: #00D9FF;
+            --color-accent: #FF2D7A;
+            --color-line: #2A3142;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-ink);
+            min-height: 100vh;
+            /* 细网格背景质感 */
+            background-image:
+                linear-gradient(rgba(42, 49, 66, 0.4) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(42, 49, 66, 0.4) 1px, transparent 1px);
+            background-size: 56px 56px;
+        }
+        h1, h2, h3 { color: var(--color-ink); letter-spacing: -0.01em; }
+        .num { font-family: var(--font-display); font-feature-settings: "tnum"; }
+
+        /* 暗卡片 + glow 边缘 */
+        .panel {
+            background: var(--color-surface);
+            border: 1px solid var(--color-line);
+            border-radius: 4px;
+            position: relative;
+        }
+        .panel-glow::before {
+            content: '';
+            position: absolute; inset: -1px;
+            border-radius: 4px;
+            padding: 1px;
+            background: linear-gradient(135deg, var(--color-primary), transparent 50%);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        /* KPI */
+        .kpi { padding: 1.25rem 1.5rem; }
+        .kpi-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-muted); }
+        .kpi-value {
+            font-family: var(--font-display); font-weight: 700;
+            font-size: 2.25rem; line-height: 1.1; margin-top: 0.5rem;
+            color: var(--color-primary);
+            text-shadow: 0 0 24px rgba(0, 217, 255, 0.35);
+        }
+        .kpi-trend { font-family: var(--font-display); font-size: 0.85rem; margin-top: 0.5rem; color: #00D97A; }
+        .kpi-trend.down { color: var(--color-accent); }
+
+        /* 表格 */
+        .data-table { width: 100%; border-collapse: collapse; }
+        .data-table thead th {
+            font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--color-muted); font-weight: 500;
+            padding: 0.875rem 1.25rem; text-align: left;
+            border-bottom: 1px solid var(--color-line);
+        }
+        .data-table tbody td {
+            padding: 1rem 1.25rem; font-size: 0.9rem;
+            border-bottom: 1px solid var(--color-line);
+            color: var(--color-ink);
+        }
+        .data-table tbody tr:hover { background: rgba(0, 217, 255, 0.04); }
+        .data-table .num-cell { font-family: var(--font-display); }
+
+        /* 自定义颜色类（暗色主题下不用 Tailwind 默认色） */
+        .cell-up   { color: #00D97A; font-family: var(--font-display); }
+        .cell-down { color: #FF5C8A; font-family: var(--font-display); }
+        .badge {
+            display: inline-block; padding: 0.25rem 0.625rem;
+            font-size: 0.7rem; letter-spacing: 0.08em;
+            border-radius: 2px; border: 1px solid;
+        }
+        .badge-success { background: rgba(0, 217, 122, 0.12); color: #00D97A; border-color: rgba(0, 217, 122, 0.35); }
+        .badge-info    { background: rgba(0, 217, 255, 0.12); color: var(--color-primary); border-color: rgba(0, 217, 255, 0.35); }
+        .badge-warning { background: rgba(251, 191, 36, 0.12); color: #FBBF24; border-color: rgba(251, 191, 36, 0.35); }
+        .badge-danger  { background: rgba(255, 45, 122, 0.15); color: #FF5C8A; border-color: rgba(255, 45, 122, 0.35); }
+
+        /* 装饰：状态条 */
+        .status-bar {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-family: var(--font-display); font-size: 0.7rem;
+            color: var(--color-muted); letter-spacing: 0.1em;
+        }
+        .status-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--color-primary);
+            box-shadow: 0 0 8px var(--color-primary);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    </style>
+</head>
+<body class="min-h-screen">
+<div id="app" v-cloak>
+    <!-- Top Bar -->
+    <header style="border-bottom: 1px solid var(--color-line); background: rgba(11, 15, 26, 0.85); backdrop-filter: blur(8px);" class="sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-5">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 style="font-size: 1.375rem; font-weight: 600;">{{ D.meta.dashTitle }}</h1>
+                    <p class="text-sm mt-1" style="color: var(--color-muted);">{{ D.meta.dashSubtitle }}</p>
+                </div>
+                <div class="status-bar">
+                    <span class="status-dot"></span>
+                    <span>UPDATED · {{ D.meta.updateDate }}</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+        <!-- KPI 行 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div v-for="(k, i) in D.kpis" :key="i" class="panel kpi" :class="{ 'panel-glow': i === 0 }">
+                <div class="kpi-label">{{ k.label }}</div>
+                <div class="kpi-value">{{ k.value }}</div>
+                <div v-if="k.trend" class="kpi-trend" :class="{ down: k.trendDown }">{{ k.trend }}</div>
+            </div>
+        </div>
+
+        <!-- 图表行 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
+            <div v-if="hasTrend" class="panel p-6">
+                <h3 class="text-base font-semibold mb-4" style="letter-spacing: 0.02em;">{{ D.trendChart.title }}</h3>
+                <canvas ref="trendCanvas"></canvas>
+            </div>
+            <div v-if="hasPie" class="panel p-6">
+                <h3 class="text-base font-semibold mb-4" style="letter-spacing: 0.02em;">{{ D.pieChart.title }}</h3>
+                <canvas ref="pieCanvas"></canvas>
+            </div>
+        </div>
+
+        <!-- 表格 -->
+        <div v-if="D.table.rows.length" class="panel">
+            <div class="px-6 py-4" style="border-bottom: 1px solid var(--color-line);">
+                <h3 class="text-base font-semibold" style="letter-spacing: 0.02em;">{{ D.table.title }}</h3>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th v-for="(h, i) in D.table.head" :key="i">{{ h }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(row, ri) in D.table.rows" :key="ri">
+                            <template v-for="(cell, ci) in row" :key="ci">
+                                <td v-if="cell && cell.badge">
+                                    <span :class="['badge', cell.badge.class || 'badge-info']">{{ cell.badge.text }}</span>
+                                </td>
+                                <td v-else-if="cell && typeof cell === 'object'" :class="cell.class || ''">{{ cell.text }}</td>
+                                <td v-else :class="ci === 1 ? 'num-cell' : ''">{{ cell }}</td>
+                            </template>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-xs" style="color: var(--color-muted); letter-spacing: 0.1em; font-family: var(--font-display);">
+        <p>{{ D.meta.footerText }}</p>
+    </footer>
+</div>
+
+<script>
+    const { createApp, ref, computed, onMounted } = Vue;
+    createApp({
+        setup() {
+            const trendCanvas = ref(null);
+            const pieCanvas   = ref(null);
+            const hasTrend = computed(() => D.trendChart && D.trendChart.data && D.trendChart.data.length > 0);
+            const hasPie   = computed(() => D.pieChart   && D.pieChart.data   && D.pieChart.data.length > 0);
+
+            const gridColor = '#2A3142';
+            const tickColor = '#7E8694';
+            const fontFamily = 'JetBrains Mono, monospace';
+
+            onMounted(() => {
+                document.title = D.meta.pageTitle || '数据看板';
+
+                if (hasTrend.value && trendCanvas.value) {
+                    new Chart(trendCanvas.value, {
+                        type: 'line',
+                        data: {
+                            labels: D.trendChart.labels || [],
+                            datasets: [{
+                                label: D.trendChart.seriesLabel || '',
+                                data: D.trendChart.data,
+                                borderColor: D.meta.primaryColor || '#00D9FF',
+                                backgroundColor: 'rgba(0, 217, 255, 0.08)',
+                                tension: 0.35,
+                                fill: true,
+                                pointRadius: 3,
+                                pointBackgroundColor: D.meta.primaryColor || '#00D9FF',
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: { legend: { labels: { color: '#E8EAF0', font: { family: fontFamily, size: 11 } } } },
+                            scales: {
+                                x: { grid: { color: gridColor }, ticks: { color: tickColor, font: { family: fontFamily } } },
+                                y: { grid: { color: gridColor }, ticks: { color: tickColor, font: { family: fontFamily } } }
+                            }
+                        }
+                    });
+                }
+
+                if (hasPie.value && pieCanvas.value) {
+                    new Chart(pieCanvas.value, {
+                        type: 'doughnut',
+                        data: {
+                            labels: D.pieChart.labels || [],
+                            datasets: [{
+                                data: D.pieChart.data,
+                                backgroundColor: D.pieChart.colors || ['#00D9FF', '#FF2D7A', '#FBBF24', '#7E8694'],
+                                borderColor: '#0B0F1A',
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: { legend: { labels: { color: '#E8EAF0', font: { family: fontFamily, size: 11 } } } }
+                        }
+                    });
+                }
+            });
+
+            return { D, trendCanvas, pieCanvas, hasTrend, hasPie };
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

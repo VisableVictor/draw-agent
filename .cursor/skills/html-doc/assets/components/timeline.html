@@ -1,0 +1,47 @@
+<!-- Timeline Component -->
+<!-- 使用场景：项目进展、里程碑、发展历程 -->
+<div class="space-y-8">
+    <h3 class="text-xl font-bold mb-6">{{时间线标题}}</h3>
+    
+    <div class="relative border-l-2 border-gray-200 ml-4 space-y-8">
+        <!-- Timeline Item -->
+        <div class="relative pl-8">
+            <div class="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full border-4 border-white"></div>
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="text-sm text-gray-500 mb-2">{{日期}}</div>
+                <h4 class="text-lg font-semibold mb-2">{{事件标题}}</h4>
+                <p class="text-gray-600">{{事件描述}}</p>
+            </div>
+        </div>
+        
+        <div class="relative pl-8">
+            <div class="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full border-4 border-white"></div>
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="text-sm text-gray-500 mb-2">{{日期}}</div>
+                <h4 class="text-lg font-semibold mb-2">{{事件标题}}</h4>
+                <p class="text-gray-600">{{事件描述}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 使用示例：
+<div class="relative border-l-2 border-gray-200 ml-4 space-y-8">
+    <div class="relative pl-8">
+        <div class="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></div>
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="text-sm text-gray-500 mb-2">2026-01-15</div>
+            <h4 class="text-lg font-semibold mb-2">项目启动</h4>
+            <p class="text-gray-600">完成需求评审，组建团队，制定开发计划</p>
+        </div>
+    </div>
+    <div class="relative pl-8">
+        <div class="absolute -left-2 top-0 w-4 h-4 bg-green-500 rounded-full border-4 border-white"></div>
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="text-sm text-gray-500 mb-2">2026-03-20</div>
+            <h4 class="text-lg font-semibold mb-2">v1.0 发布</h4>
+            <p class="text-gray-600">核心功能上线，用户开始试用</p>
+        </div>
+    </div>
+</div>
+-->

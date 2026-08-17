@@ -1,0 +1,4 @@
+interface:
+  display_name: "draw-agent"
+  short_description: "Drawing Agent hub — routes to the right sub-agent for diagrams, charts, posters, HTML pages, and more"
+  default_prompt: "Use $draw-agent to understand the user's drawing/visualization request, classify intent, and route to the correct sub-agent (fireworks-diagram, auto-diagram, lieflat-charts, html-doc, drawio-skill, zine-poster, scenes-gathered-zine, scene-distillation-zine, still-image-motion-director, or doneai)."

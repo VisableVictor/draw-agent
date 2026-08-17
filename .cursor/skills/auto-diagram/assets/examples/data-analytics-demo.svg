@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1720 920">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6f8fb"/>
+      <stop offset="100%" stop-color="#eef4f7"/>
+    </linearGradient>
+    <linearGradient id="hero-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#155e75"/>
+    </linearGradient>
+    <marker id="ad-arrow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#47627a"/>
+    </marker>
+    <style>
+      .ad-title { font: 700 34px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #163047; }
+      .ad-subtitle { font: 400 16px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #567188; }
+      .ad-group-title { font: 700 13px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #3f5d74; letter-spacing: 0.08em; }
+      .ad-node-title { font: 700 20px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #17344a; }
+      .ad-node-body { font: 400 13px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #4d687d; }
+      .ad-note-title { font: 700 20px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #ffffff; }
+      .ad-note-body { font: 400 14px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #d9f4f0; }
+      .ad-edge { stroke: #47627a; stroke-width: 2.5; fill: none; marker-end: url(#ad-arrow); }
+      .ad-edge-label { font: 600 12px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #557086; }
+      .ad-legend { font: 400 12px "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #60788e; }
+      .lane-box { fill: rgba(255,255,255,0.58); stroke: rgba(79,112,134,0.16); stroke-width: 1.5; }
+      .stage-box { fill: #ffffff; stroke: #cdd9e3; stroke-width: 2; }
+      .stage-topline-ingest { fill: #dbeafe; }
+      .stage-topline-lake { fill: #d1fae5; }
+      .stage-topline-transform { fill: #fef3c7; }
+      .stage-topline-serve { fill: #fce7f3; }
+      .stage-topline-consume { fill: #ede9fe; }
+      .note-box { fill: url(#hero-grad); }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1720" height="920" fill="url(#bg-grad)"/>
+
+  <text class="ad-title" x="72" y="78">Data Analytics Pipeline</text>
+  <text class="ad-subtitle" x="72" y="108">A report-ready example showing how raw source data becomes governed metrics and business-facing dashboards.</text>
+
+  <g class="ad-stage" data-stage-id="main-stage">
+    <rect class="lane-box ad-stage-box" x="52" y="188" width="1616" height="580" rx="28" ry="28"/>
+  </g>
+  <text class="ad-group-title" x="84" y="214">MAIN VALUE CHAIN</text>
+
+  <g class="ad-node" data-node-id="summary-card" data-role="annotation" data-weight="heavy" data-pad-x="28" data-pad-top="20" data-pad-bottom="20">
+    <rect class="ad-note-box note-box" x="1115" y="52" width="535" height="112" rx="24" ry="24"/>
+    <text class="ad-note-title" x="1382.5" y="92" text-anchor="middle">Core Message</text>
+    <text class="ad-note-body" x="1382.5" y="118" text-anchor="middle">
+      <tspan x="1382.5" dy="0">The pipeline follows one clean chain:</tspan>
+      <tspan x="1382.5" dy="19">ingest, store, model, serve, then drive business action.</tspan>
+    </text>
+  </g>
+
+  <g class="ad-group" data-group-id="data-production">
+    <rect class="ad-group-box" x="72" y="236" width="526" height="330" rx="24" ry="24" fill="#f8fbfd" stroke="#d7e3ea"/>
+    <text class="ad-group-title" x="100" y="264">DATA PRODUCTION</text>
+  </g>
+
+  <g class="ad-group" data-group-id="modeling-consumption">
+    <rect class="ad-group-box" x="596" y="236" width="1072" height="482" rx="24" ry="24" fill="#fbfcfe" stroke="#d7e3ea"/>
+    <text class="ad-group-title" x="608" y="264">MODELING TO CONSUMPTION</text>
+  </g>
+
+  <g class="ad-node" data-node-id="sources" data-stage-id="main-stage" data-group-id="data-production" data-role="secondary" data-row="1" data-col="1" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box stage-box" x="96" y="324" width="210" height="122" rx="18" ry="18"/>
+    <rect class="stage-topline-ingest" x="96" y="324" width="210" height="16" rx="18" ry="18"/>
+    <text class="ad-node-title" x="201" y="373" text-anchor="middle">Source Systems</text>
+    <text class="ad-node-body" x="201" y="399" text-anchor="middle">
+      <tspan x="201" dy="0">Events and CRM data</tspan>
+      <tspan x="201" dy="18">Orders, ads, support</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="ingest" data-stage-id="main-stage" data-group-id="data-production" data-role="secondary" data-row="1" data-col="2" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box stage-box" x="366" y="324" width="210" height="122" rx="18" ry="18"/>
+    <rect class="stage-topline-ingest" x="366" y="324" width="210" height="16" rx="18" ry="18"/>
+    <text class="ad-node-title" x="471" y="373" text-anchor="middle">Ingest Layer</text>
+    <text class="ad-node-body" x="471" y="399" text-anchor="middle">
+      <tspan x="471" dy="0">CDC, batch drops,</tspan>
+      <tspan x="471" dy="18">streaming connectors</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="lakehouse" data-stage-id="main-stage" data-group-id="modeling-consumption" data-role="secondary" data-row="1" data-col="3" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box stage-box" x="636" y="324" width="210" height="122" rx="18" ry="18"/>
+    <rect class="stage-topline-lake" x="636" y="324" width="210" height="16" rx="18" ry="18"/>
+    <text class="ad-node-title" x="741" y="373" text-anchor="middle">Lakehouse</text>
+    <text class="ad-node-body" x="741" y="399" text-anchor="middle">
+      <tspan x="741" dy="0">Raw and curated</tspan>
+      <tspan x="741" dy="18">history-ready storage</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="transform" data-stage-id="main-stage" data-group-id="modeling-consumption" data-role="primary" data-row="1" data-col="4" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box stage-box" x="906" y="324" width="210" height="122" rx="18" ry="18"/>
+    <rect class="stage-topline-transform" x="906" y="324" width="210" height="16" rx="18" ry="18"/>
+    <text class="ad-node-title" x="1011" y="373" text-anchor="middle">Transform Layer</text>
+    <text class="ad-node-body" x="1011" y="399" text-anchor="middle">
+      <tspan x="1011" dy="0">Modeling, tests</tspan>
+      <tspan x="1011" dy="18">and semantic rules</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="metrics" data-stage-id="main-stage" data-group-id="modeling-consumption" data-role="primary" data-row="1" data-col="5" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box stage-box" x="1176" y="324" width="210" height="122" rx="18" ry="18"/>
+    <rect class="stage-topline-serve" x="1176" y="324" width="210" height="16" rx="18" ry="18"/>
+    <text class="ad-node-title" x="1281" y="373" text-anchor="middle">Metrics Service</text>
+    <text class="ad-node-body" x="1281" y="399" text-anchor="middle">
+      <tspan x="1281" dy="0">Shared KPI layer</tspan>
+      <tspan x="1281" dy="18">Definitions and APIs</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="bi" data-stage-id="main-stage" data-group-id="modeling-consumption" data-role="primary" data-row="1" data-col="6" data-flow-level="core" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box stage-box" x="1440" y="324" width="210" height="122" rx="18" ry="18"/>
+    <rect class="stage-topline-consume" x="1440" y="324" width="210" height="16" rx="18" ry="18"/>
+    <text class="ad-node-title" x="1545" y="373" text-anchor="middle">BI &amp; Decisions</text>
+    <text class="ad-node-body" x="1545" y="399" text-anchor="middle">
+      <tspan x="1545" dy="0">Dashboards and alerts</tspan>
+      <tspan x="1545" dy="18">Planning and action</tspan>
+    </text>
+  </g>
+
+  <g class="ad-node" data-node-id="governance" data-stage-id="main-stage" data-group-id="modeling-consumption" data-role="support" data-row="2" data-col="support-span" data-flow-level="aux" data-pad-x="24" data-pad-top="18" data-pad-bottom="18">
+    <rect class="ad-node-box stage-box" x="628" y="530" width="480" height="118" rx="18" ry="18"/>
+    <rect class="stage-topline-transform" x="628" y="530" width="480" height="16" rx="18" ry="18"/>
+    <text class="ad-node-title" x="868" y="578" text-anchor="middle">Governance &amp; Reliability</text>
+    <text class="ad-node-body" x="868" y="603" text-anchor="middle">
+      <tspan x="868" dy="0">Schema control, data tests, lineage, SLA monitoring,</tspan>
+      <tspan x="868" dy="18">and ownership rules make the KPI layer trustworthy.</tspan>
+    </text>
+  </g>
+
+  <path class="ad-edge" d="M 306 385 L 366 385"/>
+  <text class="ad-edge-label" x="336" y="308" text-anchor="middle">CDC / batch</text>
+
+  <path class="ad-edge" d="M 576 385 L 636 385"/>
+  <text class="ad-edge-label" x="606" y="308" text-anchor="middle">land raw data</text>
+
+  <path class="ad-edge" d="M 846 385 L 906 385"/>
+  <text class="ad-edge-label" x="876" y="308" text-anchor="middle">model &amp; refine</text>
+
+  <path class="ad-edge" d="M 1116 385 L 1176 385"/>
+  <text class="ad-edge-label" x="1146" y="308" text-anchor="middle">semantic KPIs</text>
+
+  <path class="ad-edge" d="M 1386 385 L 1440 385"/>
+  <text class="ad-edge-label" x="1413" y="308" text-anchor="middle">serve insight</text>
+
+  <text class="ad-legend" x="88" y="814">Example route used by the upgraded skill: Mandatory brainstorm -> Data Analytics capability -> PlantUML unavailable -> SVG-first fallback for report-ready delivery.</text>
+</svg>
