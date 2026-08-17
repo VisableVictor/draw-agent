@@ -149,3 +149,5 @@ done
 ![Business Insight 域系统架构（白底扁平风）](assets/samples/showcase-business-insight-architecture.png)
 
 ![同步全链路架构图（暗色终端风）](assets/samples/showcase-sync-full-chain-dark.png)
+
+![有价格商品比例趋势（lieflat-charts 数据图表）](assets/samples/showcase-priced-products-chart.png)

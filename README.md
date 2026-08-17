@@ -149,3 +149,5 @@ Add the repository to your Codex workspace. It reads `SKILL.md` (router) + `agen
 ![Business Insight Domain Architecture (flat white style)](assets/samples/showcase-business-insight-architecture.png)
 
 ![Sync Full-Chain Architecture (dark terminal style)](assets/samples/showcase-sync-full-chain-dark.png)
+
+![Priced Products Trend (lieflat-charts data visualization)](assets/samples/showcase-priced-products-chart.png)

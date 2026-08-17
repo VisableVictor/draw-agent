@@ -34,3 +34,6 @@ agentloture.svg
 # Node (if any)
 node_modules/
 package-lock.json
+
+# Generated output
+output/

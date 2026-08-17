@@ -1,0 +1,22 @@
+---
+description: Platform brand color convention for all visual outputs
+alwaysApply: true
+globs: []
+---
+
+# Platform Color Convention
+
+When any output (chart, diagram, HTML, SVG, etc.) involves platform-specific data or labels, use the following brand colors consistently:
+
+| Platform | Color | Hex |
+|----------|-------|-----|
+| **WLW** (Wer liefert was) | Blue | `#1f6feb` / `#58a6ff` (light variant) |
+| **EP** (Europages) | Green | `#2ea043` / `#3fb950` (light variant) |
+| **Alibaba** | Yellow/Orange | `#d29922` / `#e3b341` (light variant) |
+
+## Rules
+
+- Use the primary hex on dark backgrounds; use the light variant on white/light backgrounds.
+- When both WLW and EP appear together, they must be visually distinguishable by these colors — never swap or assign arbitrary palette colors.
+- Legend labels, data series, highlights, borders, and area fills should all follow this convention.
+- If a chart only involves one platform, the brand color is still preferred over a generic palette.
