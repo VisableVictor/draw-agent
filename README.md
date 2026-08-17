@@ -130,6 +130,10 @@ Add the repository to your Codex workspace. It reads `SKILL.md` (router) + `agen
 
 ---
 
-## Showcase (fireworks-diagram)
+## Showcase
 
 ![Animated 12-style showcase](assets/samples/showcase-12-styles.gif)
+
+![Business Insight Domain Architecture (flat white style)](assets/samples/showcase-business-insight-architecture.png)
+
+![Sync Full-Chain Architecture (dark terminal style)](assets/samples/showcase-sync-full-chain-dark.png)

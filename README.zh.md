@@ -130,6 +130,10 @@ done
 
 ---
 
-## 效果展示（fireworks-diagram）
+## 效果展示
 
 ![12 风格动态总览](assets/samples/showcase-12-styles.gif)
+
+![Business Insight 域系统架构（白底扁平风）](assets/samples/showcase-business-insight-architecture.png)
+
+![同步全链路架构图（暗色终端风）](assets/samples/showcase-sync-full-chain-dark.png)
