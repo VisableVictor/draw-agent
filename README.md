@@ -132,7 +132,9 @@ Add the repository to your Codex workspace. It reads `SKILL.md` (router) + `agen
 
 ## Showcase
 
-![Animated 12-style showcase](assets/samples/showcase-12-styles.gif)
+| Claude Official | C4 Review Canvas | Ops Pulse |
+|:---:|:---:|:---:|
+| ![Style 6](assets/samples/sample-style6-claude.png) | ![Style 9](assets/samples/sample-style9-c4-review-canvas.png) | ![Style 12](assets/samples/sample-style12-ops-pulse.png) |
 
 ![Business Insight Domain Architecture (flat white style)](assets/samples/showcase-business-insight-architecture.png)
 

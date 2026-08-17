@@ -132,7 +132,9 @@ done
 
 ## 效果展示
 
-![12 风格动态总览](assets/samples/showcase-12-styles.gif)
+| Claude 官方风 | C4 评审风 | Ops Pulse 风 |
+|:---:|:---:|:---:|
+| ![Style 6](assets/samples/sample-style6-claude.png) | ![Style 9](assets/samples/sample-style9-c4-review-canvas.png) | ![Style 12](assets/samples/sample-style12-ops-pulse.png) |
 
 ![Business Insight 域系统架构（白底扁平风）](assets/samples/showcase-business-insight-architecture.png)
 
