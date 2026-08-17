@@ -14,7 +14,7 @@ A collection of drawing Agents, shared across **Cursor**, **Codex**, and **Claud
 
 ## What Is This
 
-`draw-agent` is a collection of drawing Agents, curated from the Alibaba Aone open platform, GitHub projects with 1 000+ stars, and trending skills on Douyin/Xiaohongshu. It bundles ten complementary creative/visualization agents. Each agent carries its own script toolchain, reference docs, templates, and quality gates. Together they cover:
+`draw-agent` is a collection of drawing Agents, curated from the Alibaba Aone open platform, GitHub projects with 1 000+ stars, and local hands-on practice. It bundles ten complementary creative/visualization agents. Each agent carries its own script toolchain, reference docs, templates, and quality gates. Together they cover:
 
 - **Technical diagrams** — software architecture, data flow, flowcharts, sequence diagrams, C4 reviews, cloud deployments, event streams, AI Agent/memory systems, UML class/use-case/state-machine diagrams, ER diagrams, network topology, timelines/Gantt charts, mind maps, etc.
 - **Multiple output formats** — SVG, PNG, GIF animation, offline interactive HTML, editable `.drawio`, PPTX export.
